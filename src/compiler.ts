@@ -277,31 +277,43 @@ export class Options {
 
   /** Tests if the target is WASM64 or, otherwise, WASM32. */
   get isWasm64(): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     return this.target == Target.WASM64;
   }
 
   /** Gets the unsigned size type matching the target. */
   get usizeType(): Type {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     return this.target == Target.WASM64 ? Type.usize64 : Type.usize32;
   }
 
   /** Gets the signed size type matching the target. */
   get isizeType(): Type {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     return this.target == Target.WASM64 ? Type.isize64 : Type.isize32;
   }
 
   /** Gets the size type reference matching the target. */
   get sizeTypeRef(): TypeRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     return this.target == Target.WASM64 ? TypeRef.I64 : TypeRef.I32;
   }
 
   /** Gets if any optimizations will be performed. */
   get willOptimize(): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     return this.optimizeLevelHint > 0 || this.shrinkLevelHint > 0;
   }
 
   /** Tests if a specific feature is activated. */
   hasFeature(feature: Feature): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     return (this.features & feature) != 0;
   }
 }
@@ -412,6 +424,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Compiles a {@link Program} to a {@link Module} using the specified options. */
   static compile(program: Program): Module {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     return new Compiler(program).compile();
   }
 
@@ -462,6 +476,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Performs compilation of the underlying {@link Program} to a {@link Module}. */
   compile(): Module {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var options = this.options;
     var module = this.module;
     var program = this.program;
@@ -804,6 +820,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Compiles the respective module exports for the specified entry file. */
   private compileModuleExports(file: File): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var exports = file.exports;
     if (exports) {
       // TODO: for (let [elementName, element] of exports) {
@@ -823,6 +841,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Compiles the respective module export(s) for the specified element. */
   private compileModuleExport(name: string, element: DeclaredElement, prefix: string = ""): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     switch (element.kind) {
       case ElementKind.FUNCTION_PROTOTYPE: {
@@ -925,6 +945,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Compiles any element. */
   compileElement(element: Element, compileMembers: bool = true): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     switch (element.kind) {
       case ElementKind.GLOBAL: {
         this.compileGlobal(<Global>element);
@@ -976,6 +998,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Compiles the file matching the specified path. */
   compileFileByPath(normalizedPathWithoutExtension: string, reportNode: Node): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var file: File;
     var filesByName = this.program.filesByName;
     var pathWithIndex: string;
@@ -995,6 +1019,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Compiles the specified file. */
   compileFile(file: File): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     if (file.is(CommonFlags.COMPILED)) return;
     file.set(CommonFlags.COMPILED);
 
@@ -1040,6 +1066,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Compiles a global variable. */
   compileGlobal(global: Global): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     if (global.is(CommonFlags.COMPILED)) return !global.is(CommonFlags.ERRORED);
     global.set(CommonFlags.COMPILED);
 
@@ -1271,6 +1299,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Compiles an enum. */
   compileEnum(element: Enum): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     if (element.is(CommonFlags.COMPILED)) return !element.is(CommonFlags.ERRORED);
     element.set(CommonFlags.COMPILED);
 
@@ -1385,6 +1415,8 @@ export class Compiler extends DiagnosticEmitter {
     /** Force compilation of stdlib alternative if a builtin. */
     forceStdAlternative: bool = false
   ): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     if (instance.is(CommonFlags.COMPILED)) return !instance.is(CommonFlags.ERRORED);
 
     if (!forceStdAlternative) {
@@ -1523,6 +1555,8 @@ export class Compiler extends DiagnosticEmitter {
     /** Target array of statements also being returned. Creates a new array if omitted. */
     stmts: ExpressionRef[]
   ): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var bodyNode = assert(instance.prototype.bodyNode);
     var returnType = instance.signature.returnType;
@@ -1634,6 +1668,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Compiles a priorly resolved class. */
   compileClass(instance: Class): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     if (instance.is(CommonFlags.COMPILED)) return true;
     instance.set(CommonFlags.COMPILED);
     var prototype = instance.prototype;
@@ -1713,6 +1749,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Compiles an instance field to a getter and a setter. */
   compileField(instance: Field): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     this.compileFieldGetter(instance);
     this.compileFieldSetter(instance);
     return instance.is(CommonFlags.COMPILED);
@@ -1720,6 +1758,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Compiles the getter of the specified instance field. */
   compileFieldGetter(instance: Field): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     if (instance.getterRef) return true;
     var module = this.module;
     var valueType = instance.type;
@@ -1743,6 +1783,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Compiles the setter of the specified instance field. */
   compileFieldSetter(instance: Field): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     if (instance.setterRef) return true;
     var type = instance.type;
     var thisTypeRef = this.options.sizeTypeRef;
@@ -1784,6 +1826,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Compiles a property to a getter and potentially a setter. */
   compileProperty(instance: Property): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     this.compilePropertyGetter(instance);
     this.compilePropertySetter(instance);
     return instance.is(CommonFlags.COMPILED);
@@ -1791,6 +1835,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /* Compiles the getter of the specified property. */
   compilePropertyGetter(instance: Property): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var getterInstance = instance.getterInstance;
     if (getterInstance) {
       let ret = this.compileFunction(getterInstance);
@@ -1805,6 +1851,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Compiles the setter of the specified property. */
   compilePropertySetter(instance: Property): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var setterInstance = instance.setterInstance;
     if (setterInstance) {
       let ret = this.compileFunction(setterInstance);
@@ -1821,6 +1869,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Adds a static memory segment with the specified data. */
   addAlignedMemorySegment(buffer: Uint8Array, alignment: i32 = 16): MemorySegment {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     assert(isPowerOf2(alignment));
     var memoryOffset = i64_align(this.memoryOffset, alignment);
     var segment = new MemorySegment(buffer, memoryOffset);
@@ -1831,6 +1881,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Adds a static memory segment representing a runtime object. */
   addRuntimeMemorySegment(buffer: Uint8Array): MemorySegment {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var memoryOffset = this.program.computeBlockStart64(this.memoryOffset);
     var segment = new MemorySegment(buffer, memoryOffset);
     this.memorySegments.push(segment);
@@ -1840,6 +1892,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Ensures that a string exists in static memory and returns a pointer expression. Deduplicates. */
   ensureStaticString(stringValue: string): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var ptr = this.ensureStaticStringPtr(stringValue);
     this.currentType = this.program.stringInstance.type;
     return this.module.usize(ptr);
@@ -1847,6 +1901,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Ensures that a string exists in static memory and returns a pointer to it. Deduplicates. */
   ensureStaticStringPtr(stringValue: string): i64 {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var program = this.program;
     var totalOverhead = program.totalOverhead;
     var stringInstance = assert(program.stringInstance);
@@ -1868,6 +1924,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Writes a series of static values of the specified type to a buffer. */
   writeStaticBuffer(buf: Uint8Array, pos: i32, elementType: Type, values: ExpressionRef[]): i32 {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var length = values.length;
     var byteSize = elementType.byteSize;
     var elementTypeRef = elementType.toRef();
@@ -1959,6 +2017,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Adds a buffer to static memory and returns the created segment. */
   addStaticBuffer(elementType: Type, values: ExpressionRef[], id: u32 = this.program.arrayBufferInstance.id): MemorySegment {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var program = this.program;
     var arrayBufferInstance = program.arrayBufferInstance;
     var buf = arrayBufferInstance.createBuffer(values.length * elementType.byteSize);
@@ -1974,6 +2034,8 @@ export class Compiler extends DiagnosticEmitter {
     /** Optional array instance override. */
     arrayInstance: Class | null = null
   ): MemorySegment {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var program = this.program;
     if (!arrayInstance) {
       arrayInstance = assert(this.resolver.resolveClass(this.program.arrayPrototype, [ elementType ]));
@@ -1993,6 +2055,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Ensures that a runtime counterpart of the specified function exists and returns its address. */
   ensureRuntimeFunction(instance: Function): i64 {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     assert(instance.is(CommonFlags.COMPILED) && !instance.is(CommonFlags.STUB));
     var program = this.program;
     var memorySegment = instance.memorySegment;
@@ -2019,6 +2083,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Compiles a top level statement (incl. function declarations etc.) to the specified body. */
   compileTopLevelStatement(statement: Statement, body: ExpressionRef[]): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     switch (statement.kind) {
       case NodeKind.CLASSDECLARATION: {
         let memberStatements = (<ClassDeclaration>statement).members;
@@ -2108,6 +2174,8 @@ export class Compiler extends DiagnosticEmitter {
     /** Whether this is the last statement of the body, if known. */
     isLastInBody: bool = false
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var stmt: ExpressionRef;
     switch (statement.kind) {
@@ -2208,6 +2276,8 @@ export class Compiler extends DiagnosticEmitter {
     /** Statements to append to that is also returned. Created if omitted. */
     stmts: ExpressionRef[] | null = null
   ): ExpressionRef[] {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var numStatements = statements.length;
     if (!stmts) {
       stmts = new Array<ExpressionRef>(numStatements);
@@ -2239,6 +2309,8 @@ export class Compiler extends DiagnosticEmitter {
   private compileBlockStatement(
     statement: BlockStatement
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var statements = statement.statements;
     var outerFlow = this.currentFlow;
     var innerFlow = outerFlow.fork();
@@ -2254,6 +2326,8 @@ export class Compiler extends DiagnosticEmitter {
   private compileBreakStatement(
     statement: BreakStatement
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var labelNode = statement.label;
     if (labelNode) {
@@ -2281,6 +2355,8 @@ export class Compiler extends DiagnosticEmitter {
   private compileContinueStatement(
     statement: ContinueStatement
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var label = statement.label;
     if (label) {
@@ -2310,6 +2386,8 @@ export class Compiler extends DiagnosticEmitter {
     /** Statement to compile. */
     statement: DoStatement
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     return this.doCompileDoStatement(statement, null);
   }
 
@@ -2319,6 +2397,8 @@ export class Compiler extends DiagnosticEmitter {
     /** If recompiling, the flow with differing local flags that triggered it. */
     flowAfter: Flow | null
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var outerFlow = this.currentFlow;
 
@@ -2438,12 +2518,16 @@ export class Compiler extends DiagnosticEmitter {
   private compileEmptyStatement(
     statement: EmptyStatement
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     return this.module.nop();
   }
 
   private compileExpressionStatement(
     statement: ExpressionStatement
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     return this.compileExpression(statement.expression, Type.void, Constraints.CONV_IMPLICIT);
   }
 
@@ -2451,6 +2535,8 @@ export class Compiler extends DiagnosticEmitter {
     /** Statement to compile. */
     statement: ForStatement
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     return this.doCompileForStatement(statement, null);
   }
 
@@ -2460,6 +2546,8 @@ export class Compiler extends DiagnosticEmitter {
     /** If recompiling, the flow with differing local flags that triggered it. */
     flowAfter: Flow | null
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var outerFlow = this.currentFlow;
 
@@ -2636,6 +2724,8 @@ export class Compiler extends DiagnosticEmitter {
   private compileForOfStatement(
     statement: ForOfStatement
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     this.error(
       DiagnosticCode.Not_implemented_0,
       statement.range,
@@ -2647,6 +2737,8 @@ export class Compiler extends DiagnosticEmitter {
   private compileIfStatement(
     statement: IfStatement
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var ifTrue = statement.ifTrue;
     var ifFalse = statement.ifFalse;
@@ -2750,6 +2842,8 @@ export class Compiler extends DiagnosticEmitter {
     statement: ReturnStatement,
     isLastInBody: bool
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var expr: ExpressionRef = 0;
     var flow = this.currentFlow;
@@ -2807,6 +2901,8 @@ export class Compiler extends DiagnosticEmitter {
   private compileSwitchStatement(
     statement: SwitchStatement
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
 
     var cases = statement.cases;
@@ -2922,6 +3018,8 @@ export class Compiler extends DiagnosticEmitter {
   private compileThrowStatement(
     statement: ThrowStatement
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // TODO: requires exception-handling spec.
     var flow = this.currentFlow;
 
@@ -2945,6 +3043,8 @@ export class Compiler extends DiagnosticEmitter {
   private compileTryStatement(
     statement: TryStatement
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // TODO: can't yet support something like: try { return ... } finally { ... }
     // worthwhile to investigate lowering returns to block results (here)?
     this.error(
@@ -2959,6 +3059,8 @@ export class Compiler extends DiagnosticEmitter {
   private compileVariableStatement(
     statement: VariableStatement
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var declarations = statement.declarations;
     var numDeclarations = declarations.length;
@@ -3153,6 +3255,8 @@ export class Compiler extends DiagnosticEmitter {
   private compileVoidStatement(
     statement: VoidStatement
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     return this.compileExpression(statement.expression, Type.void,
       Constraints.CONV_EXPLICIT | Constraints.WILL_DROP
     );
@@ -3162,6 +3266,8 @@ export class Compiler extends DiagnosticEmitter {
     /** Statement to compile. */
     statement: WhileStatement
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     return this.doCompileWhileStatement(statement, null);
   }
 
@@ -3171,6 +3277,8 @@ export class Compiler extends DiagnosticEmitter {
     /** If recompiling, the flow with differing local flags that triggered it. */
     flowAfter: Flow | null
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var outerFlow = this.currentFlow;
 
@@ -3316,6 +3424,8 @@ export class Compiler extends DiagnosticEmitter {
     contextualType: Type,
     constraints: Constraints
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     assert(element.is(CommonFlags.INLINED | CommonFlags.RESOLVED));
     var type = element.type;
     this.currentType = type;
@@ -3397,6 +3507,8 @@ export class Compiler extends DiagnosticEmitter {
     contextualType: Type,
     constraints: Constraints = Constraints.NONE
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     while (expression.kind == NodeKind.PARENTHESIZED) { // skip
       expression = (<ParenthesizedExpression>expression).expression;
     }
@@ -3517,6 +3629,8 @@ export class Compiler extends DiagnosticEmitter {
     /** Report node. */
     reportNode: Node
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
 
     // void to any
@@ -3749,6 +3863,8 @@ export class Compiler extends DiagnosticEmitter {
     contextualType: Type,
     constraints: Constraints
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var inheritedConstraints = constraints & ~(Constraints.CONV_IMPLICIT | Constraints.CONV_EXPLICIT);
     switch (expression.assertionKind) {
       case AssertionKind.PREFIX:
@@ -3814,6 +3930,8 @@ export class Compiler extends DiagnosticEmitter {
     contextualType: Type,
     constraints: Constraints
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var left = expression.left;
     var right = expression.right;
@@ -4692,6 +4810,8 @@ export class Compiler extends DiagnosticEmitter {
   }
 
   makeLt(leftExpr: ExpressionRef, rightExpr: ExpressionRef, type: Type): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // Cares about garbage bits and signedness
     var module = this.module;
     switch (type.kind) {
@@ -4750,6 +4870,8 @@ export class Compiler extends DiagnosticEmitter {
   }
 
   makeGt(leftExpr: ExpressionRef, rightExpr: ExpressionRef, type: Type): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // Cares about garbage bits and signedness
     var module = this.module;
     switch (type.kind) {
@@ -4808,6 +4930,8 @@ export class Compiler extends DiagnosticEmitter {
   }
 
   makeLe(leftExpr: ExpressionRef, rightExpr: ExpressionRef, type: Type): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // Cares about garbage bits and signedness
     var module = this.module;
     switch (type.kind) {
@@ -4866,6 +4990,8 @@ export class Compiler extends DiagnosticEmitter {
   }
 
   makeGe(leftExpr: ExpressionRef, rightExpr: ExpressionRef, type: Type): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // Cares about garbage bits and signedness
     var module = this.module;
     switch (type.kind) {
@@ -4924,6 +5050,8 @@ export class Compiler extends DiagnosticEmitter {
   }
 
   makeEq(leftExpr: ExpressionRef, rightExpr: ExpressionRef, type: Type, reportNode: Node): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // Cares about garbage bits
     var module = this.module;
     switch (type.kind) {
@@ -4987,6 +5115,8 @@ export class Compiler extends DiagnosticEmitter {
   }
 
   makeNe(leftExpr: ExpressionRef, rightExpr: ExpressionRef, type: Type, reportNode: Node): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // Cares about garbage bits
     var module = this.module;
     switch (type.kind) {
@@ -5052,6 +5182,8 @@ export class Compiler extends DiagnosticEmitter {
   }
 
   makeAdd(leftExpr: ExpressionRef, rightExpr: ExpressionRef, type: Type): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // Does not care about garbage bits or signedness
     var module = this.module;
     switch (type.kind) {
@@ -5090,6 +5222,8 @@ export class Compiler extends DiagnosticEmitter {
   }
 
   makeSub(leftExpr: ExpressionRef, rightExpr: ExpressionRef, type: Type): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // Does not care about garbage bits or signedness
     var module = this.module;
     switch (type.kind) {
@@ -5128,6 +5262,8 @@ export class Compiler extends DiagnosticEmitter {
   }
 
   makeMul(leftExpr: ExpressionRef, rightExpr: ExpressionRef, type: Type): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // Does not care about garbage bits or signedness
     var module = this.module;
     switch (type.kind) {
@@ -5166,6 +5302,8 @@ export class Compiler extends DiagnosticEmitter {
   }
 
   makePow(leftExpr: ExpressionRef, rightExpr: ExpressionRef, type: Type, reportNode: Node): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // Cares about garbage bits
     let module = this.module;
     switch (type.kind) {
@@ -5320,6 +5458,8 @@ export class Compiler extends DiagnosticEmitter {
   }
 
   makeDiv(leftExpr: ExpressionRef, rightExpr: ExpressionRef, type: Type): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // Cares about garbage bits and signedness
     var module = this.module;
     switch (type.kind) {
@@ -5378,6 +5518,8 @@ export class Compiler extends DiagnosticEmitter {
   }
 
   makeRem(leftExpr: ExpressionRef, rightExpr: ExpressionRef, type: Type, reportNode: Node): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // Cares about garbage bits and signedness
     var module = this.module;
     switch (type.kind) {
@@ -5486,6 +5628,8 @@ export class Compiler extends DiagnosticEmitter {
   }
 
   makeShl(leftExpr: ExpressionRef, rightExpr: ExpressionRef, type: Type): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // Cares about garbage bits on the RHS, but only for types smaller than 5 bits
     var module = this.module;
     switch (type.kind) {
@@ -5525,6 +5669,8 @@ export class Compiler extends DiagnosticEmitter {
   }
 
   makeShr(leftExpr: ExpressionRef, rightExpr: ExpressionRef, type: Type): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // Cares about garbage bits on the LHS, but on the RHS only for types smaller than 5 bits,
     // and signedness
     var module = this.module;
@@ -5584,6 +5730,8 @@ export class Compiler extends DiagnosticEmitter {
   }
 
   makeShru(leftExpr: ExpressionRef, rightExpr: ExpressionRef, type: Type): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // Cares about garbage bits on the LHS, but on the RHS only for types smaller than 5 bits
     var module = this.module;
     switch (type.kind) {
@@ -5623,6 +5771,8 @@ export class Compiler extends DiagnosticEmitter {
   }
 
   makeAnd(leftExpr: ExpressionRef, rightExpr: ExpressionRef, type: Type): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // Does not care about garbage bits or signedness
     var module = this.module;
     switch (type.kind) {
@@ -5655,6 +5805,8 @@ export class Compiler extends DiagnosticEmitter {
   }
 
   makeOr(leftExpr: ExpressionRef, rightExpr: ExpressionRef, type: Type): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // Does not care about garbage bits or signedness
     var module = this.module;
     switch (type.kind) {
@@ -5689,6 +5841,8 @@ export class Compiler extends DiagnosticEmitter {
   }
 
   makeXor(leftExpr: ExpressionRef, rightExpr: ExpressionRef, type: Type): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // Does not care about garbage bits or signedness
     var module = this.module;
     switch (type.kind) {
@@ -5728,6 +5882,8 @@ export class Compiler extends DiagnosticEmitter {
     valueExpr: ExpressionRef,
     reportNode: Node
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // FIXME: see comment in compileBinaryOverload below why recompiling on type mismatch
     // is a bad idea currently. so this assumes that the type matches.
     return this.makeCallDirect(operatorInstance, [ valueExpr ], reportNode, false);
@@ -5741,6 +5897,8 @@ export class Compiler extends DiagnosticEmitter {
     right: Expression,
     reportNode: Node
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var rightType: Type;
     var signature = operatorInstance.signature;
     var parameterTypes = signature.parameterTypes;
@@ -5760,6 +5918,8 @@ export class Compiler extends DiagnosticEmitter {
     valueExpression: Expression,
     contextualType: Type
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var program = this.program;
     var resolver = program.resolver;
     var flow = this.currentFlow;
@@ -5885,6 +6045,8 @@ export class Compiler extends DiagnosticEmitter {
     /** Whether to tee the value. */
     tee: bool
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var flow = this.currentFlow;
 
@@ -6069,6 +6231,8 @@ export class Compiler extends DiagnosticEmitter {
     /** Whether to tee the value. */
     tee: bool
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var flow = this.currentFlow;
     var type = local.type;
@@ -6104,6 +6268,8 @@ export class Compiler extends DiagnosticEmitter {
     /** Whether to tee the value. */
     tee: bool
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var type = global.type;
     assert(type != Type.void);
@@ -6137,6 +6303,8 @@ export class Compiler extends DiagnosticEmitter {
     /** Whether to tee the value. */
     tee: bool
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var flow = this.currentFlow;
     var fieldType = field.type;
@@ -6177,6 +6345,8 @@ export class Compiler extends DiagnosticEmitter {
     /** Constraints indicating contextual conditions. */
     constraints: Constraints
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
 
     var module = this.module;
     var flow = this.currentFlow;
@@ -6427,6 +6597,8 @@ export class Compiler extends DiagnosticEmitter {
     /** Constraints indicating contextual conditions. */
     constraints: Constraints = Constraints.NONE
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // Desugaring like this can happen many times. Let's cache the intermediate allocation.
     var call = this._reusableCallExpression;
     if (call) {
@@ -6446,6 +6618,8 @@ export class Compiler extends DiagnosticEmitter {
     expression: CallExpression,
     contextualType: Type
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     if (prototype.hasDecorator(DecoratorFlags.UNSAFE)) this.checkUnsafe(expression);
 
     var typeArguments: Type[] | null = null;
@@ -6514,6 +6688,8 @@ export class Compiler extends DiagnosticEmitter {
     hasThis: bool,
     reportNode: Node
   ): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
 
     // cannot call an instance method without a `this` argument (TODO: `.call`?)
     var thisType = signature.thisType;
@@ -6563,6 +6739,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Checks that an unsafe expression is allowed. */
   private checkUnsafe(reportNode: Node, relatedReportNode: Node | null = null): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // Library files may always use unsafe features
     if (this.options.noUnsafe && !reportNode.range.source.isLibrary) {
       if (relatedReportNode) {
@@ -6587,6 +6765,8 @@ export class Compiler extends DiagnosticEmitter {
     thisArg: ExpressionRef = 0,
     constraints: Constraints = Constraints.NONE
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var numArguments = argumentExpressions.length;
     var signature = instance.signature;
     if (!this.checkCallSignature( // reports
@@ -6657,6 +6837,8 @@ export class Compiler extends DiagnosticEmitter {
     thisArg: ExpressionRef = 0,
     immediatelyDropped: bool = false
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var numArguments = operands ? operands.length : 0;
     var signature = instance.signature;
@@ -6743,6 +6925,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Makes sure that the arguments length helper global is present. */
   ensureArgumentsLength(): string {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var name = BuiltinNames.argumentsLength;
     if (!this.builtinArgumentsLength) {
       let module = this.module;
@@ -6753,6 +6937,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Ensures compilation of the varargs stub for the specified function. */
   ensureVarargsStub(original: Function): Function {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // A varargs stub is a function called with omitted arguments being zeroed,
     // reading the `argumentsLength` helper global to decide which initializers
     // to inject before calling the original function. It is typically attempted
@@ -6884,6 +7070,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Ensures compilation of the virtual stub for the specified function. */
   ensureVirtualStub(original: Function): Function {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // A virtual stub is a function redirecting virtual calls to the actual
     // overload targeted by the call. It utilizes varargs stubs where necessary
     // and as such has the same semantics as one. Here, we only make sure that
@@ -6907,6 +7095,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Finalizes the virtual stub of the specified function. */
   private finalizeVirtualStub(instance: Function): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var stub = this.ensureVirtualStub(instance);
     if (stub.is(CommonFlags.COMPILED)) return;
 
@@ -7033,6 +7223,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Marks managed call operands for the shadow stack. */
   private operandsTostack(signature: Signature, operands: ExpressionRef[]): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     if (!this.options.stackSize) return;
     var module = this.module;
     var operandIndex = 0;
@@ -7071,6 +7263,8 @@ export class Compiler extends DiagnosticEmitter {
     reportNode: Node,
     immediatelyDropped: bool = false
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     if (instance.hasDecorator(DecoratorFlags.INLINE)) {
       if (!instance.is(CommonFlags.VIRTUAL)) {
         assert(!instance.is(CommonFlags.STUB)); // doesn't make sense
@@ -7210,6 +7404,8 @@ export class Compiler extends DiagnosticEmitter {
     thisArg: ExpressionRef = 0,
     immediatelyDropped: bool = false
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var numArguments = argumentExpressions.length;
 
     if (!this.checkCallSignature( // reports
@@ -7246,6 +7442,8 @@ export class Compiler extends DiagnosticEmitter {
     operands: ExpressionRef[] | null = null,
     immediatelyDropped: bool = false,
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var numOperands = operands ? operands.length : 0;
     var numArguments = numOperands;
@@ -7311,6 +7509,8 @@ export class Compiler extends DiagnosticEmitter {
     contextualType: Type,
     constraints: Constraints
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var expressions = expression.expressions;
     var numExpressions = expressions.length;
     var exprs = new Array<ExpressionRef>(numExpressions--);
@@ -7328,6 +7528,8 @@ export class Compiler extends DiagnosticEmitter {
     contextualType: Type,
     constraints: Constraints
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var targetExpression = expression.expression;
     var targetType = this.resolver.resolveExpression(targetExpression, this.currentFlow); // reports
@@ -7365,6 +7567,8 @@ export class Compiler extends DiagnosticEmitter {
     contextualType: Type,
     constraints: Constraints
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var declaration = expression.declaration.clone(); // generic contexts can have multiple
     assert(!declaration.typeParameters); // function expression cannot be generic
     var flow = this.currentFlow;
@@ -7531,6 +7735,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Makes sure the enclosing source file of the specified expression has been compiled. */
   private maybeCompileEnclosingSource(expression: Expression): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var internalPath = expression.range.source.internalPath;
     var filesByName = this.program.filesByName;
     assert(filesByName.has(internalPath));
@@ -7545,6 +7751,8 @@ export class Compiler extends DiagnosticEmitter {
     contextualType: Type,
     constraints: Constraints
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var flow = this.currentFlow;
     var actualFunction = flow.actualFunction;
@@ -7796,6 +8004,8 @@ export class Compiler extends DiagnosticEmitter {
     contextualType: Type,
     constraints: Constraints
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var flow = this.currentFlow;
     var isType = expression.isType;
 
@@ -7827,6 +8037,8 @@ export class Compiler extends DiagnosticEmitter {
   }
 
   private makeInstanceofType(expression: InstanceOfExpression, expectedType: Type): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var flow = this.currentFlow;
     var expr = this.compileExpression(expression.expression, expectedType);
@@ -7942,6 +8154,8 @@ export class Compiler extends DiagnosticEmitter {
   }
 
   private makeInstanceofClass(expression: InstanceOfExpression, prototype: ClassPrototype): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var expr = this.compileExpression(expression.expression, Type.auto);
     var actualType = this.currentType;
@@ -7988,6 +8202,8 @@ export class Compiler extends DiagnosticEmitter {
     constraints: Constraints,
     implicitlyNegate: bool = false
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     switch (expression.literalKind) {
       case LiteralKind.ARRAY: {
@@ -8059,6 +8275,8 @@ export class Compiler extends DiagnosticEmitter {
     expression: StringLiteralExpression,
     constraints: Constraints
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     return this.ensureStaticString(expression.value);
   }
 
@@ -8066,6 +8284,8 @@ export class Compiler extends DiagnosticEmitter {
     expression: TemplateLiteralExpression,
     constraints: Constraints
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var tag = expression.tag;
     var parts = expression.parts;
     var numParts = parts.length;
@@ -8270,6 +8490,8 @@ export class Compiler extends DiagnosticEmitter {
     contextualType: Type,
     constraints: Constraints
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var flow = this.currentFlow;
     var program = this.program;
@@ -8410,6 +8632,8 @@ export class Compiler extends DiagnosticEmitter {
     /** Report node. */
     reportNode: Node
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var program = this.program;
     var module = this.module;
     assert(!arrayInstance.extends(program.staticArrayPrototype));
@@ -8436,6 +8660,8 @@ export class Compiler extends DiagnosticEmitter {
     contextualType: Type,
     constraints: Constraints
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var flow = this.currentFlow;
     var program = this.program;
@@ -8552,6 +8778,8 @@ export class Compiler extends DiagnosticEmitter {
   }
 
   private compileObjectLiteral(expression: ObjectLiteralExpression, contextualType: Type): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
 
     // Check that contextual type is a class (TODO: hidden class for interfaces?)
@@ -8748,6 +8976,8 @@ export class Compiler extends DiagnosticEmitter {
     contextualType: Type,
     constraints: Constraints
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var flow = this.currentFlow;
 
@@ -8811,6 +9041,8 @@ export class Compiler extends DiagnosticEmitter {
     /** Report node. */
     reportNode: Node
   ): Function {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var instance = classInstance.constructorInstance;
     if (instance) {
       // shortcut if already compiled
@@ -8930,6 +9162,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Checks that all class fields have been initialized. */
   checkFieldInitialization(classInstance: Class, relatedNode: Node | null = null): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     if (classInstance.didCheckFieldInitialization) return;
     classInstance.didCheckFieldInitialization = true;
     var ctor = assert(classInstance.constructorInstance);
@@ -8938,6 +9172,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Checks that all class fields have been initialized in the specified flow. */
   checkFieldInitializationInFlow(classInstance: Class, flow: Flow, relatedNode: Node | null = null): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var members = classInstance.members;
     if (members) {
       for (let _values = Map_values(members), i = 0, k = _values.length; i < k; ++i) {
@@ -8990,6 +9226,8 @@ export class Compiler extends DiagnosticEmitter {
     /** Node to report on. */
     reportNode: Node
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     assert(ctorInstance.is(CommonFlags.CONSTRUCTOR));
     var parent = ctorInstance.parent;
     assert(parent.kind == ElementKind.CLASS);
@@ -9013,6 +9251,8 @@ export class Compiler extends DiagnosticEmitter {
     ctxType: Type,
     constraints: Constraints
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var flow = this.currentFlow;
 
@@ -9159,6 +9399,8 @@ export class Compiler extends DiagnosticEmitter {
     ctxType: Type,
     constraints: Constraints
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var ifThen = expression.ifThen;
     var ifElse = expression.ifElse;
@@ -9232,6 +9474,8 @@ export class Compiler extends DiagnosticEmitter {
     contextualType: Type,
     constraints: Constraints
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var flow = this.currentFlow;
 
@@ -9490,6 +9734,8 @@ export class Compiler extends DiagnosticEmitter {
     contextualType: Type,
     constraints: Constraints
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var compound = false;
     var expr: ExpressionRef;
@@ -9854,6 +10100,8 @@ export class Compiler extends DiagnosticEmitter {
     contextualType: Type,
     constraints: Constraints
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var operand = expression.operand;
     var expr: ExpressionRef = 0;
     var stringInstance = this.program.stringInstance;
@@ -9935,6 +10183,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Makes sure that a 32-bit integer value is wrapped to a valid value of the specified type. */
   ensureSmallIntegerWrap(expr: ExpressionRef, type: Type): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var flow = this.currentFlow;
     switch (type.kind) {
@@ -10000,6 +10250,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Adds the debug location of the specified expression at the specified range to the source map. */
   addDebugLocation(expr: ExpressionRef, range: Range): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var parentFunction = this.currentFlow.parentFunction;
     var source = range.source;
     if (source.debugInfoIndex < 0) source.debugInfoIndex = this.module.addDebugInfoFile(source.normalizedPath);
@@ -10009,6 +10261,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Checks whether a particular feature is enabled. */
   checkFeatureEnabled(feature: Feature, reportNode: Node): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     if (!this.options.hasFeature(feature)) {
       this.error(
         DiagnosticCode.Feature_0_is_not_enabled,
@@ -10021,6 +10275,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Checks whether a particular type is supported. */
   checkTypeSupported(type: Type, reportNode: Node): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     switch (type.kind) {
       case TypeKind.V128: return this.checkFeatureEnabled(Feature.SIMD, reportNode);
       case TypeKind.FUNCREF:
@@ -10073,6 +10329,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Checks whether a particular function signature is supported. */
   checkSignatureSupported(signature: Signature, reportNode: FunctionTypeNode): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var supported = true;
     var explicitThisType = reportNode.explicitThisType;
     if (explicitThisType) {
@@ -10098,6 +10356,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Evaluates a boolean condition, determining whether it is TRUE, FALSE or UNKNOWN. */
   evaluateCondition(expr: ExpressionRef): ConditionKind {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     let type = getExpressionType(expr);
     if (type == TypeRef.Unreachable)
       return ConditionKind.UNKNOWN;
@@ -10117,6 +10377,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Makes a constant zero of the specified type. */
   makeZero(type: Type, reportNode: Node): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     switch (type.kind) {
       default: assert(false);
@@ -10145,6 +10407,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Makes a constant one of the specified type. */
   makeOne(type: Type): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     switch (type.kind) {
       default: assert(false);
@@ -10167,6 +10431,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Makes a constant negative one of the specified type. */
   makeNegOne(type: Type): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     switch (type.kind) {
       default: assert(false);
@@ -10187,6 +10453,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Creates a comparison whether an expression is 'true' in a broader sense. */
   makeIsTrueish(expr: ExpressionRef, type: Type, reportNode: Node): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     switch (type.kind) {
       case TypeKind.I8:
@@ -10268,6 +10536,8 @@ export class Compiler extends DiagnosticEmitter {
 
   /** Makes a string conversion of the given expression. */
   makeToString(expr: ExpressionRef, type: Type, reportNode: Node): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var stringType = this.program.stringInstance.type;
     if (type == stringType) {
       return expr;
@@ -10318,6 +10588,8 @@ export class Compiler extends DiagnosticEmitter {
   makeAllocation(
     classInstance: Class
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var program = this.program;
     assert(classInstance.program == program);
     var module = this.module;
@@ -10348,6 +10620,8 @@ export class Compiler extends DiagnosticEmitter {
     classInstance: Class,
     thisIndex: i32
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var classType = classInstance.type;
     var classTypeRef = classType.toRef();
@@ -10370,6 +10644,8 @@ export class Compiler extends DiagnosticEmitter {
     /** Statements to append to also being returned. Created if omitted. */
     stmts: ExpressionRef[] = []
   ): ExpressionRef[] {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var members = classInstance.members;
     if (!members) return stmts;
 
@@ -10448,6 +10724,8 @@ export class Compiler extends DiagnosticEmitter {
     /** Code location to report when aborting. */
     codeLocation: Node
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var program = this.program;
     var abortInstance = program.abortInstance;
     if (!abortInstance || !this.compileFunction(abortInstance)) return this.module.unreachable();
@@ -10470,6 +10748,8 @@ export class Compiler extends DiagnosticEmitter {
     /** Code location to report when aborting. */
     codeLocation: Node
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var program = this.program;
     var module = this.module;
     var abortInstance = program.abortInstance;
@@ -10501,6 +10781,8 @@ export class Compiler extends DiagnosticEmitter {
     /** Report node. */
     reportNode: Node
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var module = this.module;
     var flow = this.currentFlow;
     var temp = flow.getTempLocal(type);
@@ -10527,6 +10809,8 @@ export class Compiler extends DiagnosticEmitter {
     /** Report node. */
     reportNode: Node
   ): ExpressionRef {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     assert(toType.isReference && toType.nonNullableType.isAssignableTo(type));
     var module = this.module;
     var flow = this.currentFlow;
@@ -10570,6 +10854,8 @@ function mangleImportName(
   element: Element,
   declaration: DeclarationStatement
 ): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
   // by default, use the file name as the module name
   mangleImportName_moduleName = declaration.range.source.simplePath;
   // and the internal name of the element within that file as the element name

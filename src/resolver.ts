@@ -151,6 +151,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     switch (node.kind) {
       case NodeKind.NAMEDTYPE: {
         return this.resolveNamedType(
@@ -184,6 +186,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var nameNode = node.name;
     var typeArgumentNodes = node.typeArguments;
     var isSimpleType = !nameNode.next;
@@ -358,6 +362,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var explicitThisType = node.explicitThisType;
     var thisType: Type | null = null;
     if (explicitThisType) {
@@ -441,6 +447,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     const typeArgumentNode = this.ensureOneTypeArgument(node, reportMode);
     if (!typeArgumentNode) return null;
     var typeArgument = this.resolveType(typeArgumentNode, ctxElement, ctxTypes, reportMode);
@@ -476,6 +484,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     const typeArgumentNode = this.ensureOneTypeArgument(node, reportMode);
     if (!typeArgumentNode) return null;
     var typeArgument = this.resolveType(typeArgumentNode, ctxElement, ctxTypes, reportMode);
@@ -519,6 +529,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     const typeArgumentNode = this.ensureOneTypeArgument(node, reportMode);
     if (!typeArgumentNode) return null;
     var typeArgument = this.resolveType(typeArgumentNode, ctxElement, ctxTypes, reportMode);
@@ -547,6 +559,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventualy diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     const typeArgumentNode = this.ensureOneTypeArgument(node, reportMode);
     if (!typeArgumentNode) return null;
     var typeArgument = this.resolveType(typeArgumentNode, ctxElement, ctxTypes, reportMode);
@@ -572,6 +586,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     const typeArgumentNode = this.ensureOneTypeArgument(node, reportMode);
     if (!typeArgumentNode) return null;
     var typeArgument = this.resolveType(typeArgumentNode, ctxElement, ctxTypes, reportMode);
@@ -589,6 +605,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Element | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var element = ctxElement.lookup(node.identifier.text, true);
     if (!element) {
       if (reportMode == ReportMode.REPORT) {
@@ -632,6 +650,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type[] | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var minParameterCount = 0;
     var maxParameterCount = 0;
     for (let i = 0, k = typeParameters.length; i < k; ++i) {
@@ -687,6 +707,8 @@ export class Resolver extends DiagnosticEmitter {
     ctxFlow: Flow,
     reportMode: ReportMode = ReportMode.REPORT
   ): Function | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var typeArguments = node.typeArguments;
 
     // resolve generic call if type arguments have been provided
@@ -802,6 +824,8 @@ export class Resolver extends DiagnosticEmitter {
     /** The names of the type parameters being inferred. */
     typeParameterNames: Set<string>
   ): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     if (node.kind == NodeKind.NAMEDTYPE) {
       let namedTypeNode = <NamedTypeNode>node;
       let typeArgumentNodes = namedTypeNode.typeArguments;
@@ -852,6 +876,8 @@ export class Resolver extends DiagnosticEmitter {
 
   /** Gets the concrete type of an element. */
   getTypeOfElement(element: Element): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var kind = element.kind;
     if (kind == ElementKind.GLOBAL) {
       if (!this.ensureResolvedLazyGlobal(<Global>element, ReportMode.SWALLOW)) return null;
@@ -870,6 +896,8 @@ export class Resolver extends DiagnosticEmitter {
 
   /** Gets the element of a concrete type. */
   getElementOfType(type: Type): Element | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     let classReference = type.getClassOrWrapper(this.program);
     if (classReference) return classReference;
     return null;
@@ -888,6 +916,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Element | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     while (node.kind == NodeKind.PARENTHESIZED) { // skip
       node = (<ParenthesizedExpression>node).expression;
     }
@@ -1007,6 +1037,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     while (node.kind == NodeKind.PARENTHESIZED) { // skip
       node = (<ParenthesizedExpression>node).expression;
     }
@@ -1126,6 +1158,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Element | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     switch (node.kind) {
       case NodeKind.TRUE:
       case NodeKind.FALSE:
@@ -1181,6 +1215,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     switch (node.kind) {
       case NodeKind.TRUE:
       case NodeKind.FALSE: return Type.bool;
@@ -1220,6 +1256,8 @@ export class Resolver extends DiagnosticEmitter {
 
   /** Resolves a lazily compiled global, i.e. a static class field or annotated `@lazy`. */
   private ensureResolvedLazyGlobal(global: Global, reportMode: ReportMode = ReportMode.REPORT): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     if (global.is(CommonFlags.RESOLVED)) return true;
     var type: Type | null;
     var typeNode = global.typeNode;
@@ -1244,6 +1282,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Element | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var targetNode = node.expression;
     var target = this.lookupExpression(targetNode, ctxFlow, ctxType, reportMode); // reports
     if (!target) return null;
@@ -1435,6 +1475,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var element = this.lookupPropertyAccessExpression(node, ctxFlow, ctxType, reportMode);
     if (!element) return null;
     var type = this.getTypeOfElement(element);
@@ -1460,6 +1502,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Element | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var targetExpression = node.expression;
     var targetType = this.resolveExpression(targetExpression, ctxFlow, ctxType, reportMode);
     if (!targetType) return null;
@@ -1495,6 +1539,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var element = this.lookupElementAccessExpression(node, ctxFlow, ctxType, reportMode);
     if (!element) return null;
     var type = this.getTypeOfElement(element);
@@ -1516,6 +1562,8 @@ export class Resolver extends DiagnosticEmitter {
     /** Contextual type. */
     ctxType: Type
   ): Type {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     if (ctxType.isValue) {
       // compile to contextual type if matching
       switch (ctxType.kind) {
@@ -1584,6 +1632,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Element | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     switch (node.assertionKind) {
       case AssertionKind.AS:
       case AssertionKind.PREFIX: {
@@ -1640,6 +1690,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     switch (node.assertionKind) {
       case AssertionKind.AS:
       case AssertionKind.PREFIX: {
@@ -1684,6 +1736,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Element | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var type = this.resolveUnaryPrefixExpression(node, ctxFlow, ctxType, reportMode);
     if (!type) return null;
     var element = this.getElementOfType(type);
@@ -1709,6 +1763,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var operand = node.operand;
     var operator = node.operator;
     switch (operator) {
@@ -1794,6 +1850,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Element | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var type = this.resolveUnaryPostfixExpression(node, ctxFlow, ctxType, reportMode);
     if (!type) return null;
     var element = this.getElementOfType(type);
@@ -1819,6 +1877,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var operator = node.operator;
     switch (operator) {
       case Token.PLUS_PLUS:
@@ -1857,6 +1917,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Element | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var type = this.resolveBinaryExpression(node, ctxFlow, ctxType, reportMode);
     if (!type) return null;
     var element = this.getElementOfType(type);
@@ -1881,6 +1943,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var left = node.left;
     var right = node.right;
     var operator = node.operator;
@@ -2052,6 +2116,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Element | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     if (ctxFlow.isInline) {
       let thisLocal = ctxFlow.lookupLocal(CommonNames.this_);
       if (thisLocal) {
@@ -2086,6 +2152,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var element = this.lookupThisExpression(node, ctxFlow, ctxType, reportMode);
     if (!element) return null;
     var type = this.getTypeOfElement(element);
@@ -2111,6 +2179,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Element | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     if (ctxFlow.isInline) {
       let superLocal = ctxFlow.lookupLocal(CommonNames.super_);
       if (superLocal) {
@@ -2148,6 +2218,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var element = this.lookupSuperExpression(node, ctxFlow, ctxType, reportMode);
     if (!element) return null;
     var type = this.getTypeOfElement(element);
@@ -2173,6 +2245,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Element | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     this.currentThisExpression = node;
     this.currentElementExpression = null;
     switch (node.literalKind) {
@@ -2265,6 +2339,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var element = this.lookupLiteralExpression(node, ctxFlow, ctxType, reportMode);
     if (!element) return null;
     var type = this.getTypeOfElement(element);
@@ -2290,6 +2366,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Element | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var type = this.resolveCallExpression(node, ctxFlow, ctxType, reportMode);
     if (!type) return null;
     var element = this.getElementOfType(type);
@@ -2315,6 +2393,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var targetExpression = node.expression;
     var target = this.lookupExpression( // reports
       targetExpression,
@@ -2378,6 +2458,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Element | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var expressions = node.expressions;
     return this.lookupExpression(expressions[assert(expressions.length) - 1], ctxFlow, ctxType, reportMode);
   }
@@ -2393,6 +2475,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var expressions = node.expressions;
     return this.resolveExpression(expressions[assert(expressions.length) - 1], ctxFlow, ctxType, reportMode);
   }
@@ -2408,6 +2492,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Element | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     return assert(Type.bool.getClassOrWrapper(this.program));
   }
 
@@ -2422,6 +2508,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     return Type.bool;
   }
 
@@ -2436,6 +2524,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Element | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var type = this.resolveTernaryExpression(node, ctxFlow, ctxType, reportMode);
     if (!type) return null;
     var element = this.getElementOfType(type);
@@ -2461,6 +2551,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var thenType = this.resolveExpression(node.ifThen, ctxFlow, ctxType, reportMode);
     if (!thenType) return null;
     var elseType = this.resolveExpression(node.ifElse, ctxFlow, thenType, reportMode);
@@ -2488,6 +2580,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Element | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var element = this.resolveTypeName(node.typeName, ctxFlow.actualFunction, reportMode);
     if (!element) return null;
     if (element.kind == ElementKind.CLASS_PROTOTYPE) {
@@ -2520,6 +2614,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var element = this.lookupNewExpression(node, ctxFlow, ctxType, reportMode);
     if (!element) return null;
     var type = this.getTypeOfElement(element);
@@ -2545,6 +2641,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Element | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var type = this.resolveFunctionExpression(node, ctxFlow, ctxType, reportMode);
     if (!type) return null;
     var element = this.getElementOfType(type);
@@ -2570,6 +2668,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Type | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     return this.resolveFunctionType(node.declaration.signature, ctxFlow.actualFunction, ctxFlow.contextualTypeArguments, reportMode);
   }
 
@@ -2586,6 +2686,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Function | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var actualParent = prototype.parent.kind == ElementKind.PROPERTY_PROTOTYPE
       ? prototype.parent.parent
       : prototype.parent;
@@ -2763,6 +2865,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Function | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var actualParent = prototype.parent.kind == ElementKind.PROPERTY_PROTOTYPE
       ? prototype.parent.parent
       : prototype.parent;
@@ -2823,6 +2927,8 @@ export class Resolver extends DiagnosticEmitter {
 
   /** Resolves reachable overloads of the given instance method. */
   resolveOverloads(instance: Function): Function[] | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var overloadPrototypes = instance.prototype.overloads;
     if (!overloadPrototypes) return null;
 
@@ -2888,6 +2994,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Class | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var instanceKey = typeArguments ? typesToString(typeArguments) : "";
 
     // Do not attempt to resolve the same class twice. This can return a class
@@ -3007,6 +3115,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode
   ): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var members = instance.members;
     if (!members) instance.members = members = new Map();
 
@@ -3397,6 +3507,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Class | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var resolvedTypeArguments: Type[] | null = null;
 
     // Resolve type arguments if generic
@@ -3440,6 +3552,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): Property | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var instance = prototype.instance;
     if (instance) return instance;
     prototype.instance = instance = new Property(prototype, prototype);
@@ -3481,6 +3595,8 @@ export class Resolver extends DiagnosticEmitter {
     /** How to proceed with eventual diagnostics. */
     reportMode: ReportMode = ReportMode.REPORT
   ): TypeNode | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var typeArgumentNodes = node.typeArguments;
     let numTypeArguments = 0;
     if (!typeArgumentNodes || (numTypeArguments = typeArgumentNodes.length) != 1) {

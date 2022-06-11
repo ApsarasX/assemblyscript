@@ -206,9 +206,9 @@ const common = {
   ],
   legalComments: "none",
   bundle: true,
-  sourcemap: true,
-  treeShaking: true,
-  minify: true,
+  sourcemap: false,
+  treeShaking: false,
+  minify: false,
   watch,
   incremental: watch
 };

@@ -196,6 +196,8 @@ export class Flow {
 
   /** Creates the parent flow of the specified function. */
   static createParent(parentFunction: Function): Flow {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var flow = new Flow(parentFunction);
     if (parentFunction.is(CommonFlags.CONSTRUCTOR)) {
       flow.initThisFieldFlags();
@@ -205,6 +207,8 @@ export class Flow {
 
   /** Creates an inline flow within `parentFunction`. */
   static createInline(parentFunction: Function, inlineFunction: Function): Flow {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var flow = new Flow(parentFunction);
     flow.inlineFunction = inlineFunction;
     flow.inlineReturnLabel = inlineFunction.internalName + "|inlined." + (inlineFunction.nextInlineId++).toString();
@@ -244,11 +248,15 @@ export class Flow {
 
   /** Tests if this is an inline flow. */
   get isInline(): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     return this.inlineFunction != null;
   }
 
   /** Gets the actual function being compiled, The inlined function when inlining, otherwise the parent function. */
   get actualFunction(): Function {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var inlineFunction = this.inlineFunction;
     if (inlineFunction) return inlineFunction;
     return this.parentFunction;
@@ -256,11 +264,15 @@ export class Flow {
 
   /** Gets the current return type. */
   get returnType(): Type {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     return this.actualFunction.signature.returnType;
   }
 
   /** Gets the current contextual type arguments. */
   get contextualTypeArguments(): Map<string,Type> | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     return this.actualFunction.contextualTypeArguments;
   }
 
@@ -274,6 +286,8 @@ export class Flow {
   unset(flag: FlowFlags): void { this.flags &= ~flag; }
 
   deriveConditionalFlags(): FlowFlags {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     let condiFlags = this.flags & FlowFlags.ANY_CONDITIONAL;
     if (this.is(FlowFlags.RETURNS)) {
       condiFlags |= FlowFlags.CONDITIONALLY_RETURNS;
@@ -295,6 +309,8 @@ export class Flow {
 
   /** Forks this flow to a child flow. */
   fork(resetBreakContext: bool = false): Flow {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var branch = new Flow(this.parentFunction);
     branch.parent = this;
     branch.outer = this.outer;
@@ -324,6 +340,8 @@ export class Flow {
 
   /** Gets a free temporary local of the specified type. */
   getTempLocal(type: Type, except: Set<i32> | null = null): Local {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var parentFunction = this.parentFunction;
     var temps: Local[] | null;
     switch (<u32>type.toRef()) {
@@ -372,6 +390,8 @@ export class Flow {
 
   /** Frees the temporary local for reuse. */
   freeTempLocal(local: Local): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     if (local.is(CommonFlags.INLINED)) return;
     assert(local.index >= 0);
     var parentFunction = this.parentFunction;
@@ -452,6 +472,8 @@ export class Flow {
 
   /** Gets the scoped local of the specified name. */
   getScopedLocal(name: string): Local | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var scopedLocals = this.scopedLocals;
     if (scopedLocals && scopedLocals.has(name)) return assert(scopedLocals.get(name));
     return null;
@@ -459,6 +481,8 @@ export class Flow {
 
   /** Adds a new scoped local of the specified name. */
   addScopedLocal(name: string, type: Type, except: Set<i32> | null = null): Local {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var scopedLocal = this.getTempLocal(type, except);
     scopedLocal.setTemporaryName(name);
     var scopedLocals = this.scopedLocals;
@@ -471,6 +495,8 @@ export class Flow {
 
   /** Adds a new scoped dummy local of the specified name. */
   addScopedDummyLocal(name: string, type: Type, declarationNode: Node): Local {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var scopedDummy = new Local(name, -1, type, this.parentFunction);
     var scopedLocals = this.scopedLocals;
     if (!scopedLocals) this.scopedLocals = scopedLocals = new Map();
@@ -487,6 +513,8 @@ export class Flow {
 
   /** Adds a new scoped alias for the specified local. For example `super` aliased to the `this` local. */
   addScopedAlias(name: string, type: Type, index: i32, reportNode: Node | null = null): Local {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var scopedLocals = this.scopedLocals;
     if (!scopedLocals) {
       this.scopedLocals = scopedLocals = new Map();
@@ -518,6 +546,8 @@ export class Flow {
 
   /** Tests if this flow has any scoped locals that must be free'd. */
   get hasScopedLocals(): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var scopedLocals = this.scopedLocals;
     if (scopedLocals) {
       // TODO: for (let local of scopedLocals.values()) {
@@ -533,6 +563,8 @@ export class Flow {
 
   /** Frees a single scoped local by its name. */
   freeScopedDummyLocal(name: string): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var scopedLocals = assert(this.scopedLocals);
     assert(scopedLocals.has(name));
     let local = assert(scopedLocals.get(name));
@@ -542,6 +574,8 @@ export class Flow {
 
   /** Frees this flow's scoped variables and returns its parent flow. */
   freeScopedLocals(): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var scopedLocals = this.scopedLocals;
     if (scopedLocals) {
       // TODO: for (let local of scopedLocals.values()) {
@@ -557,6 +591,8 @@ export class Flow {
 
   /** Looks up the local of the specified name in the current scope. */
   lookupLocal(name: string): Local | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var current: Flow | null = this;
     do {
       let scope = current.scopedLocals;
@@ -570,6 +606,8 @@ export class Flow {
 
   /** Looks up the element with the specified name relative to the scope of this flow. */
   lookup(name: string): Element | null {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var element = this.lookupLocal(name);
     if (element) return element;
     return this.actualFunction.lookup(name);
@@ -577,6 +615,8 @@ export class Flow {
 
   /** Tests if the local at the specified index has the specified flag or flags. */
   isLocalFlag(index: i32, flag: LocalFlags, defaultIfInlined: bool = true): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     if (index < 0) return defaultIfInlined;
     var localFlags = this.localFlags;
     return index < localFlags.length && (unchecked(localFlags[index]) & flag) == flag;
@@ -584,6 +624,8 @@ export class Flow {
 
   /** Tests if the local at the specified index has any of the specified flags. */
   isAnyLocalFlag(index: i32, flag: LocalFlags, defaultIfInlined: bool = true): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     if (index < 0) return defaultIfInlined;
     var localFlags = this.localFlags;
     return index < localFlags.length && (unchecked(localFlags[index]) & flag) != 0;
@@ -591,6 +633,8 @@ export class Flow {
 
   /** Sets the specified flag or flags on the local at the specified index. */
   setLocalFlag(index: i32, flag: LocalFlags): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     if (index < 0) return;
     var localFlags = this.localFlags;
     var flags = index < localFlags.length ? unchecked(localFlags[index]) : 0;
@@ -599,6 +643,8 @@ export class Flow {
 
   /** Unsets the specified flag or flags on the local at the specified index. */
   unsetLocalFlag(index: i32, flag: LocalFlags): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     if (index < 0) return;
     var localFlags = this.localFlags;
     var flags = index < localFlags.length ? unchecked(localFlags[index]) : 0;
@@ -607,6 +653,8 @@ export class Flow {
 
   /** Initializes `this` field flags. */
   initThisFieldFlags(): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var actualFunction = this.actualFunction;
     assert(actualFunction.is(CommonFlags.CONSTRUCTOR));
     var actualParent = actualFunction.parent;
@@ -638,6 +686,8 @@ export class Flow {
 
   /** Tests if the specified `this` field has the specified flag or flags. */
   isThisFieldFlag(field: Field, flag: FieldFlags): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var fieldFlags = this.thisFieldFlags;
     if (fieldFlags != null && fieldFlags.has(field)) {
       return (changetype<FieldFlags>(fieldFlags.get(field)) & flag) == flag;
@@ -647,6 +697,8 @@ export class Flow {
 
   /** Sets the specified flag or flags on the given `this` field. */
   setThisFieldFlag(field: Field, flag: FieldFlags): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var fieldFlags = this.thisFieldFlags;
     if (fieldFlags) {
       assert(this.actualFunction.is(CommonFlags.CONSTRUCTOR));
@@ -663,6 +715,8 @@ export class Flow {
 
   /** Pushes a new break label to the stack, for example when entering a loop that one can `break` from. */
   pushBreakLabel(): string {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var parentFunction = this.parentFunction;
     var id = parentFunction.nextBreakId++;
     var stack = parentFunction.breakStack;
@@ -675,6 +729,8 @@ export class Flow {
 
   /** Pops the most recent break label from the stack. */
   popBreakLabel(): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var parentFunction = this.parentFunction;
     var stack = assert(parentFunction.breakStack);
     var length = assert(stack.length);
@@ -689,6 +745,8 @@ export class Flow {
 
   /** Inherits flags of another flow into this one, i.e. a finished inner block. */
   inherit(other: Flow): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     assert(other.parentFunction == this.parentFunction);
     assert(other.parent == this); // currently the case, but might change
     var otherFlags = other.flags;
@@ -711,6 +769,8 @@ export class Flow {
 
   /** Inherits flags of a conditional branch joining again with this one, i.e. then without else. */
   inheritBranch(other: Flow, conditionKind: ConditionKind = ConditionKind.UNKNOWN): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     assert(other.parentFunction == this.parentFunction);
     switch (conditionKind) {
       case ConditionKind.TRUE: this.inherit(other); // always executes
@@ -815,6 +875,8 @@ export class Flow {
 
   /** Inherits mutual flags of two alternate branches becoming this one, i.e. then with else. */
   inheritMutual(left: Flow, right: Flow): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     assert(left.parentFunction == right.parentFunction);
     assert(left.parentFunction == this.parentFunction);
     // This differs from the previous method in that no flags are guaranteed
@@ -959,6 +1021,8 @@ export class Flow {
 
   /** Tests if the specified flows have differing local states. */
   static hasIncompatibleLocalStates(before: Flow, after: Flow): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var numThisLocalFlags = before.localFlags.length;
     var numOtherLocalFlags = after.localFlags.length;
     var parentFunction = before.parentFunction;
@@ -984,6 +1048,8 @@ export class Flow {
 
   /** Unifies local flags between this and the other flow. */
   unifyLocalFlags(other: Flow): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var numThisLocalFlags = this.localFlags.length;
     var numOtherLocalFlags = other.localFlags.length;
     for (let i = 0, k = min<i32>(numThisLocalFlags, numOtherLocalFlags); i < k; ++i) {
@@ -998,6 +1064,8 @@ export class Flow {
 
   /** Checks if an expression of the specified type is known to be non-null, even if the type might be nullable. */
   isNonnull(expr: ExpressionRef, type: Type): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     if (!type.isNullableReference) return true;
     // below, only teeLocal/getLocal are relevant because these are the only expressions that
     // depend on a dynamic nullable state (flag = LocalFlags.NONNULL), while everything else
@@ -1023,6 +1091,8 @@ export class Flow {
     /** If specified, only set the flag if also nonnull in this flow. */
     iff: Flow | null = null
   ): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // A: `expr` is true-ish -> Q: how did that happen?
 
     // The iff argument is useful in situations like
@@ -1137,6 +1207,8 @@ export class Flow {
     /** If specified, only set the flag if also nonnull in this flow. */
     iff: Flow | null = null
   ): void {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // A: `expr` is false-ish -> Q: how did that happen?
     switch (getExpressionId(expr)) {
       case ExpressionId.Unary: {
@@ -1227,6 +1299,8 @@ export class Flow {
    * any possible combination of garbage bits being present.
    */
   canOverflow(expr: ExpressionRef, type: Type): bool {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     // TODO: the following catches most common and a few uncommon cases, but there are additional
     // opportunities here, obviously.
 
@@ -1484,6 +1558,8 @@ export class Flow {
   }
 
   toString(): string {
+    // @ts-ignore
+    console.log(new Error().stack.split('\n')[1].trim());
     var levels = 0;
     var parent = this.parent;
     while (parent) {
@@ -1512,6 +1588,8 @@ export class Flow {
 
 /** Tests if a conversion from one type to another can technically overflow. */
 function canConversionOverflow(fromType: Type, toType: Type): bool {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return toType.isShortIntegerValue && (
     !fromType.isIntegerValue ||                                    // i.e. float to small int
     fromType.size > toType.size ||                                 // larger int to small int

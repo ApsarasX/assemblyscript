@@ -760,6 +760,8 @@ export const function_builtins = new Map<string,(ctx: BuiltinContext) => Express
 
 // isInteger<T!>() / isInteger<T?>(value: T) -> bool
 function builtin_isInteger(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   var type = checkConstantType(ctx);
@@ -771,6 +773,8 @@ builtins.set(BuiltinNames.isInteger, builtin_isInteger);
 
 // isFloat<T!>() / isFloat<T?>(value: T) -> bool
 function builtin_isFloat(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   var type = checkConstantType(ctx);
@@ -782,6 +786,8 @@ builtins.set(BuiltinNames.isFloat, builtin_isFloat);
 
 // isBoolean<T!>() / isBoolean<T?>(value: T) -> bool
 function builtin_isBoolean(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   var type = checkConstantType(ctx);
@@ -793,6 +799,8 @@ builtins.set(BuiltinNames.isBoolean, builtin_isBoolean);
 
 // isSigned<T!>() / isSigned<T?>(value: T) -> bool
 function builtin_isSigned(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   var type = checkConstantType(ctx);
@@ -804,6 +812,8 @@ builtins.set(BuiltinNames.isSigned, builtin_isSigned);
 
 // isReference<T!>() / isReference<T?>(value: T) -> bool
 function builtin_isReference(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   var type = checkConstantType(ctx);
@@ -815,6 +825,8 @@ builtins.set(BuiltinNames.isReference, builtin_isReference);
 
 // isString<T!>() / isString<T?>(value: T) -> bool
 function builtin_isString(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   var type = checkConstantType(ctx);
@@ -833,6 +845,8 @@ builtins.set(BuiltinNames.isString, builtin_isString);
 
 // isArray<T!>() / isArray<T?>(value: T) -> bool
 function builtin_isArray(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   var type = checkConstantType(ctx);
@@ -851,6 +865,8 @@ builtins.set(BuiltinNames.isArray, builtin_isArray);
 
 // isArrayLike<T!>() / isArrayLike<T?>(value: T) -> bool
 function builtin_isArrayLike(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   var type = checkConstantType(ctx);
@@ -869,6 +885,8 @@ builtins.set(BuiltinNames.isArrayLike, builtin_isArrayLike);
 
 // isFunction<T!> / isFunction<T?>(value: T) -> bool
 function builtin_isFunction(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   var type = checkConstantType(ctx);
@@ -880,6 +898,8 @@ builtins.set(BuiltinNames.isFunction, builtin_isFunction);
 
 // isNullable<T!> / isNullable<T?>(value: T) -> bool
 function builtin_isNullable(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   var type = checkConstantType(ctx);
@@ -891,6 +911,8 @@ builtins.set(BuiltinNames.isNullable, builtin_isNullable);
 
 // isDefined(expression) -> bool
 function builtin_isDefined(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   // Note that `isDefined` neither compiles nor evaluates the given expression
   // but exclusively performs a check whether it can be compiled in theory.
   // This is not exactly unsafe due to only seemingly having side effects which
@@ -914,6 +936,8 @@ builtins.set(BuiltinNames.isDefined, builtin_isDefined);
 
 // isConstant(expression) -> bool
 function builtin_isConstant(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   compiler.currentType = Type.bool;
@@ -935,6 +959,8 @@ builtins.set(BuiltinNames.isConstant, builtin_isConstant);
 
 // isManaged<T!>() -> bool
 function builtin_isManaged(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   var type = checkConstantType(ctx);
@@ -946,6 +972,8 @@ builtins.set(BuiltinNames.isManaged, builtin_isManaged);
 
 // isVoid<T!>() -> bool
 function builtin_isVoid(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   var type = checkConstantType(ctx);
@@ -957,6 +985,8 @@ builtins.set(BuiltinNames.isVoid, builtin_isVoid);
 
 // lengthof<T!>() -> i32
 function builtin_lengthof(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   var type = checkConstantType(ctx);
@@ -976,6 +1006,8 @@ builtins.set(BuiltinNames.lengthof, builtin_lengthof);
 
 // sizeof<T!>() -> usize*
 function builtin_sizeof(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   compiler.currentType = compiler.options.usizeType;
@@ -998,6 +1030,8 @@ builtins.set(BuiltinNames.sizeof, builtin_sizeof);
 
 // alignof<T!>() -> usize*
 function builtin_alignof(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   compiler.currentType = compiler.options.usizeType;
@@ -1020,6 +1054,8 @@ builtins.set(BuiltinNames.alignof, builtin_alignof);
 
 // offsetof<T!>(fieldName?: string) -> usize*
 function builtin_offsetof(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   compiler.currentType = compiler.options.usizeType;
@@ -1076,6 +1112,8 @@ builtins.set(BuiltinNames.offsetof, builtin_offsetof);
 
 // nameof<T> -> string
 function builtin_nameof(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   var resultType = checkConstantType(ctx);
@@ -1101,6 +1139,8 @@ builtins.set(BuiltinNames.nameof, builtin_nameof);
 
 // idof<T> -> u32
 function builtin_idof(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   var type = checkConstantType(ctx);
@@ -1126,6 +1166,8 @@ builtins.set(BuiltinNames.idof, builtin_idof);
 
 // clz<T?>(value: T) -> T
 function builtin_clz(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -1169,6 +1211,8 @@ builtins.set(BuiltinNames.clz, builtin_clz);
 
 // ctz<T?>(value: T) -> T
 function builtin_ctz(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -1213,6 +1257,8 @@ builtins.set(BuiltinNames.ctz, builtin_ctz);
 
 // popcnt<T?>(value: T) -> T
 function builtin_popcnt(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -1257,6 +1303,8 @@ builtins.set(BuiltinNames.popcnt, builtin_popcnt);
 
 // rotl<T?>(value: T, shift: T) -> T
 function builtin_rotl(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -1338,6 +1386,8 @@ builtins.set(BuiltinNames.rotl, builtin_rotl);
 
 // rotr<T?>(value: T, shift: T) -> T
 function builtin_rotr(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -1419,6 +1469,8 @@ builtins.set(BuiltinNames.rotr, builtin_rotr);
 
 // abs<T?>(value: T) -> T
 function builtin_abs(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -1529,6 +1581,8 @@ builtins.set(BuiltinNames.abs, builtin_abs);
 
 // max<T?>(left: T, right: T) -> T
 function builtin_max(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -1609,6 +1663,8 @@ builtins.set(BuiltinNames.max, builtin_max);
 
 // min<T?>(left: T, right: T) -> T
 function builtin_min(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -1689,6 +1745,8 @@ builtins.set(BuiltinNames.min, builtin_min);
 
 // ceil<T?>(value: T) -> T
 function builtin_ceil(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -1728,6 +1786,8 @@ builtins.set(BuiltinNames.ceil, builtin_ceil);
 
 // floor<T?>(value: T) -> T
 function builtin_floor(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -1767,6 +1827,8 @@ builtins.set(BuiltinNames.floor, builtin_floor);
 
 // copysign<T?>(left: T, right: T) -> T
 function builtin_copysign(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -1797,6 +1859,8 @@ builtins.set(BuiltinNames.copysign, builtin_copysign);
 
 // nearest<T?>(value: T) -> T
 function builtin_nearest(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -1836,6 +1900,8 @@ builtins.set(BuiltinNames.nearest, builtin_nearest);
 
 // reinterpret<T!>(value: *) -> T
 function builtin_reinterpret(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -1897,6 +1963,8 @@ builtins.set(BuiltinNames.reinterpret, builtin_reinterpret);
 
 // sqrt<T?>(value: T) -> T
 function builtin_sqrt(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -1926,6 +1994,8 @@ builtins.set(BuiltinNames.sqrt, builtin_sqrt);
 
 // trunc<T?>(value: T) -> T
 function builtin_trunc(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -1965,6 +2035,8 @@ builtins.set(BuiltinNames.trunc, builtin_trunc);
 
 // isNaN<T?>(value: T) -> bool
 function builtin_isNaN(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -2041,6 +2113,8 @@ builtins.set(BuiltinNames.isNaN, builtin_isNaN);
 
 // isFinite<T?>(value: T) -> bool
 function builtin_isFinite(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -2131,6 +2205,8 @@ builtins.set(BuiltinNames.isFinite, builtin_isFinite);
 
 // load<T!>(offset: usize, immOffset?: usize, immAlign?: usize) -> T*
 function builtin_load(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -2179,6 +2255,8 @@ builtins.set(BuiltinNames.load, builtin_load);
 
 // store<T!>(ptr: usize, value: T*, immOffset?: usize, immAlign?: usize) -> void
 function builtin_store(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   compiler.currentType = Type.void;
@@ -2239,6 +2317,8 @@ builtins.set(BuiltinNames.store, builtin_store);
 
 // rem<T?>(left: T, right: T) -> T
 function builtin_rem(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (checkTypeOptional(ctx, true) | checkArgsRequired(ctx, 2)) {
@@ -2293,6 +2373,8 @@ builtins.set(BuiltinNames.rem, builtin_rem);
 
 // add<T?>(left: T, right: T) -> T
 function builtin_add(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (checkTypeOptional(ctx, true) | checkArgsRequired(ctx, 2)) {
@@ -2347,6 +2429,8 @@ builtins.set(BuiltinNames.add, builtin_add);
 
 // sub<T?>(left: T, right: T) -> T
 function builtin_sub(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (checkTypeOptional(ctx, true) | checkArgsRequired(ctx, 2)) {
@@ -2401,6 +2485,8 @@ builtins.set(BuiltinNames.sub, builtin_sub);
 
 // mul<T?>(left: T, right: T) -> T
 function builtin_mul(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (checkTypeOptional(ctx, true) | checkArgsRequired(ctx, 2)) {
@@ -2455,6 +2541,8 @@ builtins.set(BuiltinNames.mul, builtin_mul);
 
 // div<T?>(left: T, right: T) -> T
 function builtin_div(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (checkTypeOptional(ctx, true) | checkArgsRequired(ctx, 2)) {
@@ -2509,6 +2597,8 @@ builtins.set(BuiltinNames.div, builtin_div);
 
 // eq<T?>(left: T, right: T) -> i32
 function builtin_eq(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (checkTypeOptional(ctx, true) | checkArgsRequired(ctx, 2)) {
@@ -2564,6 +2654,8 @@ builtins.set(BuiltinNames.eq, builtin_eq);
 
 // ne<T?>(left: T, right: T) -> i32
 function builtin_ne(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (checkTypeOptional(ctx, true) | checkArgsRequired(ctx, 2)) {
@@ -2621,6 +2713,8 @@ builtins.set(BuiltinNames.ne, builtin_ne);
 
 // atomic.load<T!>(offset: usize, immOffset?: usize) -> T*
 function builtin_atomic_load(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -2663,6 +2757,8 @@ builtins.set(BuiltinNames.atomic_load, builtin_atomic_load);
 
 // atomic.store<T!>(offset: usize, value: T*, immOffset?: usize) -> void
 function builtin_atomic_store(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -2720,6 +2816,8 @@ builtins.set(BuiltinNames.atomic_store, builtin_atomic_store);
 
 // any_atomic_binary<T!>(ptr, value: T, immOffset?: usize) -> T
 function builtin_atomic_binary(ctx: BuiltinContext, op: AtomicRMWOp, opName: string): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -2777,42 +2875,56 @@ function builtin_atomic_binary(ctx: BuiltinContext, op: AtomicRMWOp, opName: str
 
 // atomic.add<T!>(ptr, value: T, immOffset?: usize) -> T
 function builtin_atomic_add(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_atomic_binary(ctx, AtomicRMWOp.Add, "atomic.add");
 }
 builtins.set(BuiltinNames.atomic_add, builtin_atomic_add);
 
 // atomic.sub<T!>(ptr, value: T, immOffset?: usize) -> T
 function builtin_atomic_sub(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_atomic_binary(ctx, AtomicRMWOp.Sub, "atomic.sub");
 }
 builtins.set(BuiltinNames.atomic_sub, builtin_atomic_sub);
 
 // atomic.and<T!>(ptr, value: T, immOffset?: usize) -> T
 function builtin_atomic_and(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_atomic_binary(ctx, AtomicRMWOp.And, "atomic.and");
 }
 builtins.set(BuiltinNames.atomic_and, builtin_atomic_and);
 
 // atomic.or<T!>(ptr, value: T, immOffset?: usize) -> T
 function builtin_atomic_or(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_atomic_binary(ctx, AtomicRMWOp.Or, "atomic.or");
 }
 builtins.set(BuiltinNames.atomic_or, builtin_atomic_or);
 
 // atomic.xor<T!>(ptr, value: T, immOffset?: usize) -> T
 function builtin_atomic_xor(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_atomic_binary(ctx, AtomicRMWOp.Xor, "atomic.xor");
 }
 builtins.set(BuiltinNames.atomic_xor, builtin_atomic_xor);
 
 // atomic.xchg<T!>(ptr, value: T, immOffset?: usize) -> T
 function builtin_atomic_xchg(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_atomic_binary(ctx, AtomicRMWOp.Xchg, "atomic.xchg");
 }
 builtins.set(BuiltinNames.atomic_xchg, builtin_atomic_xchg);
 
 // atomic.cmpxchg<T!>(ptr: usize, expected: T, replacement: T, off?: usize) -> T
 function builtin_atomic_cmpxchg(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -2876,6 +2988,8 @@ builtins.set(BuiltinNames.atomic_cmpxchg, builtin_atomic_cmpxchg);
 
 // atomic.wait<T!>(ptr: usize, expected: T, timeout?: i64) -> i32
 function builtin_atomic_wait(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -2913,6 +3027,8 @@ builtins.set(BuiltinNames.atomic_wait, builtin_atomic_wait);
 
 // atomic.notify(ptr: usize, count?: i32) -> i32
 function builtin_atomic_notify(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -2935,6 +3051,8 @@ builtins.set(BuiltinNames.atomic_notify, builtin_atomic_notify);
 
 // atomic.fence() -> void
 function builtin_atomic_fence(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   compiler.currentType = Type.void;
@@ -2951,6 +3069,8 @@ builtins.set(BuiltinNames.atomic_fence, builtin_atomic_fence);
 
 // select<T?>(ifTrue: T, ifFalse: T, condition: bool) -> T
 function builtin_select(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -2983,6 +3103,8 @@ builtins.set(BuiltinNames.select, builtin_select);
 
 // unreachable() -> *
 function builtin_unreachable(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   checkArgsRequired(ctx, 0);
   return ctx.compiler.module.unreachable();
@@ -2993,6 +3115,8 @@ builtins.set(BuiltinNames.unreachable, builtin_unreachable);
 
 // memory.size() -> i32
 function builtin_memory_size(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   compiler.currentType = Type.i32;
@@ -3006,6 +3130,8 @@ builtins.set(BuiltinNames.memory_size, builtin_memory_size);
 
 // memory.grow(pages: i32) -> i32
 function builtin_memory_grow(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   compiler.currentType = Type.i32;
@@ -3019,6 +3145,8 @@ builtins.set(BuiltinNames.memory_grow, builtin_memory_grow);
 
 // memory.copy(dest: usize, src: usize: n: usize) -> void
 function builtin_memory_copy(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   compiler.currentType = Type.void;
@@ -3045,6 +3173,8 @@ builtins.set(BuiltinNames.memory_copy, builtin_memory_copy);
 
 // memory.fill(dest: usize, value: u8, n: usize) -> void
 function builtin_memory_fill(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   compiler.currentType = Type.void;
@@ -3072,6 +3202,8 @@ builtins.set(BuiltinNames.memory_fill, builtin_memory_fill);
 // memory.data(size[, align]) -> usize
 // memory.data<T>(values[, align]) -> usize
 function builtin_memory_data(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   compiler.currentType = Type.i32;
@@ -3185,6 +3317,8 @@ builtins.set(BuiltinNames.memory_data, builtin_memory_data);
 // === GC =====================================================================================
 
 function builtin_i31_new(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -3199,6 +3333,8 @@ function builtin_i31_new(ctx: BuiltinContext): ExpressionRef {
 builtins.set(BuiltinNames.i31_new, builtin_i31_new);
 
 function builtin_i31_get(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -3221,6 +3357,8 @@ builtins.set(BuiltinNames.i31_get, builtin_i31_get);
 
 // changetype<T!>(value: *) -> T
 function builtin_changetype(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -3246,6 +3384,8 @@ builtins.set(BuiltinNames.changetype, builtin_changetype);
 
 // assert<T?>(isTrueish: T, message?: string) -> T{!= null}
 function builtin_assert(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   var typeArguments = ctx.typeArguments;
@@ -3447,6 +3587,8 @@ builtins.set(BuiltinNames.assert, builtin_assert);
 
 // unchecked(expr: *) -> *
 function builtin_unchecked(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -3465,6 +3607,8 @@ builtins.set(BuiltinNames.unchecked, builtin_unchecked);
 
 // call_indirect<T?>(index: u32, ...args: *[]) -> T
 function builtin_call_indirect(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -3495,6 +3639,8 @@ builtins.set(BuiltinNames.call_indirect, builtin_call_indirect);
 
 // instantiate<T!>(...args: *[]) -> T
 function builtin_instantiate(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -3521,6 +3667,8 @@ builtins.set(BuiltinNames.instantiate, builtin_instantiate);
 // === User-defined diagnostics ===============================================================
 
 function builtin_diagnostic(ctx: BuiltinContext, category: DiagnosticCategory): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   checkTypeAbsent(ctx);
@@ -3542,18 +3690,24 @@ function builtin_diagnostic(ctx: BuiltinContext, category: DiagnosticCategory): 
 
 // ERROR(message?)
 function builtin_error(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_diagnostic(ctx, DiagnosticCategory.ERROR);
 }
 builtins.set(BuiltinNames.ERROR, builtin_error);
 
 // WARNING(message?)
 function builtin_warning(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_diagnostic(ctx, DiagnosticCategory.WARNING);
 }
 builtins.set(BuiltinNames.WARNING, builtin_warning);
 
 // INFO(message?)
 function builtin_info(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_diagnostic(ctx, DiagnosticCategory.INFO);
 }
 builtins.set(BuiltinNames.INFO, builtin_info);
@@ -3562,6 +3716,8 @@ builtins.set(BuiltinNames.INFO, builtin_info);
 
 // Function<T>#call(thisArg: thisof<T> | null, ...args: *[]) -> returnof<T>
 function builtin_function_call(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var parent = ctx.prototype.parent;
   assert(parent.kind == ElementKind.CLASS);
@@ -3598,6 +3754,8 @@ function_builtins.set("call", builtin_function_call);
 
 // String.raw(parts: TemplateStringsArray, ...values: unknown[]): string
 function builtin_string_raw(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   compiler.currentType = ctx.compiler.program.stringInstance.type;
@@ -3612,6 +3770,8 @@ builtins.set(BuiltinNames.String_raw, builtin_string_raw);
 // === Portable type conversions ==============================================================
 
 function builtin_conversion(ctx: BuiltinContext, toType: Type): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   if (
     checkTypeAbsent(ctx) |
@@ -3625,84 +3785,112 @@ function builtin_conversion(ctx: BuiltinContext, toType: Type): ExpressionRef {
 
 // i8(*) -> i8
 function builtin_i8(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_conversion(ctx, Type.i8);
 }
 builtins.set(BuiltinNames.i8, builtin_i8);
 
 // i16(*) -> i16
 function builtin_i16(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_conversion(ctx, Type.i16);
 }
 builtins.set(BuiltinNames.i16, builtin_i16);
 
 // i32(*) -> i32
 function builtin_i32(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_conversion(ctx, Type.i32);
 }
 builtins.set(BuiltinNames.i32, builtin_i32);
 
 // i64(*) -> i64
 function builtin_i64(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_conversion(ctx, Type.i64);
 }
 builtins.set(BuiltinNames.i64, builtin_i64);
 
 // isize(*) -> isize
 function builtin_isize(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_conversion(ctx, ctx.compiler.options.isizeType);
 }
 builtins.set(BuiltinNames.isize, builtin_isize);
 
 // u8(*) -> u8
 function builtin_u8(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_conversion(ctx, Type.u8);
 }
 builtins.set(BuiltinNames.u8, builtin_u8);
 
 // u16(*) -> u16
 function builtin_u16(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_conversion(ctx, Type.u16);
 }
 builtins.set(BuiltinNames.u16, builtin_u16);
 
 // u32(*) -> u32
 function builtin_u32(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_conversion(ctx, Type.u32);
 }
 builtins.set(BuiltinNames.u32, builtin_u32);
 
 // u64(*) -> u64
 function builtin_u64(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_conversion(ctx, Type.u64);
 }
 builtins.set(BuiltinNames.u64, builtin_u64);
 
 // usize(*) -> usize
 function builtin_usize(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_conversion(ctx, ctx.compiler.options.usizeType);
 }
 builtins.set(BuiltinNames.usize, builtin_usize);
 
 // bool(*) -> bool
 function builtin_bool(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_conversion(ctx, Type.bool);
 }
 builtins.set(BuiltinNames.bool, builtin_bool);
 
 // f32(*) -> f32
 function builtin_f32(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_conversion(ctx, Type.f32);
 }
 builtins.set(BuiltinNames.f32, builtin_f32);
 
 // f64(*) -> f64
 function builtin_f64(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_conversion(ctx, Type.f64);
 }
 builtins.set(BuiltinNames.f64, builtin_f64);
 
 // TODO: alias for now, splat input integer perhaps?
 function builtin_v128(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_i8x16(ctx);
 }
 builtins.set(BuiltinNames.v128, builtin_v128);
@@ -3711,6 +3899,8 @@ builtins.set(BuiltinNames.v128, builtin_v128);
 
 // i8x16(...values: i8[16]) -> v128
 function builtin_i8x16(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -3761,6 +3951,8 @@ builtins.set(BuiltinNames.i8x16, builtin_i8x16);
 
 // i16x8(...values: i16[8]) -> v128
 function builtin_i16x8(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -3811,6 +4003,8 @@ builtins.set(BuiltinNames.i16x8, builtin_i16x8);
 
 // i32x4(...values: i32[4]) -> v128
 function builtin_i32x4(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -3861,6 +4055,8 @@ builtins.set(BuiltinNames.i32x4, builtin_i32x4);
 
 // i64x2(...values: i64[2]) -> v128
 function builtin_i64x2(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -3913,6 +4109,8 @@ builtins.set(BuiltinNames.i64x2, builtin_i64x2);
 
 // f32x4(...values: f32[4]) -> v128
 function builtin_f32x4(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -3963,6 +4161,8 @@ builtins.set(BuiltinNames.f32x4, builtin_f32x4);
 
 // f64x2(...values: f64[2]) -> v128
 function builtin_f64x2(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -4013,6 +4213,8 @@ builtins.set(BuiltinNames.f64x2, builtin_f64x2);
 
 // v128.splat<T!>(x: T) -> v128
 function builtin_v128_splat(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -4061,6 +4263,8 @@ builtins.set(BuiltinNames.v128_splat, builtin_v128_splat);
 
 // v128.extract_lane<T!>(x: v128, idx: u8) -> T
 function builtin_v128_extract_lane(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -4125,6 +4329,8 @@ builtins.set(BuiltinNames.v128_extract_lane, builtin_v128_extract_lane);
 
 // v128.replace_lane<T!>(x: v128, idx: u8, value: T) -> v128
 function builtin_v128_replace_lane(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -4193,6 +4399,8 @@ builtins.set(BuiltinNames.v128_replace_lane, builtin_v128_replace_lane);
 
 // v128.shuffle<T!>(a: v128, b: v128, ...lanes: u8[]) -> v128
 function builtin_v128_shuffle(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -4305,6 +4513,8 @@ builtins.set(BuiltinNames.v128_shuffle, builtin_v128_shuffle);
 
 // v128.swizzle(a: v128, b: v128) -> v128
 function builtin_v128_swizzle(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -4324,6 +4534,8 @@ builtins.set(BuiltinNames.v128_swizzle, builtin_v128_swizzle);
 
 // v128.load_splat<T!>(ptr: usize, immOffset?: usize, immAlign?: usize) -> v128
 function builtin_v128_load_splat(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -4392,6 +4604,8 @@ builtins.set(BuiltinNames.v128_load_splat, builtin_v128_load_splat);
 
 // v128.load_ext<TFrom!>(ptr: usize, immOffset?: usize, immAlign?: usize) -> v128
 function builtin_v128_load_ext(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -4449,6 +4663,8 @@ builtins.set(BuiltinNames.v128_load_ext, builtin_v128_load_ext);
 
 // v128.load_zero<TFrom!>(ptr: usize, immOffset?: usize, immAlign?: usize) -> v128
 function builtin_v128_load_zero(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -4500,6 +4716,8 @@ builtins.set(BuiltinNames.v128_load_zero, builtin_v128_load_zero);
 
 // v128.load_lane<TFrom!>(ptr: usize, vec: v128, idx: u8, immOffset?: usize, immAlign?: usize) -> v128
 function builtin_v128_load_lane(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -4575,6 +4793,8 @@ builtins.set(BuiltinNames.v128_load_lane, builtin_v128_load_lane);
 
 // v128.store_lane<TFrom!>(ptr: usize, vec: v128, idx: u8, immOffset?: usize, immAlign?: usize) -> v128
 function builtin_v128_store_lane(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -4650,6 +4870,8 @@ builtins.set(BuiltinNames.v128_store_lane, builtin_v128_store_lane);
 
 // v128.add<T!>(a: v128, b: v128) -> v128
 function builtin_v128_add(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -4698,6 +4920,8 @@ builtins.set(BuiltinNames.v128_add, builtin_v128_add);
 
 // v128.sub<T!>(a: v128, b: v128) -> v128
 function builtin_v128_sub(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -4746,6 +4970,8 @@ builtins.set(BuiltinNames.v128_sub, builtin_v128_sub);
 
 // v128.mul<T!>(a: v128, b: v128) -> v128
 function builtin_v128_mul(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -4785,6 +5011,8 @@ builtins.set(BuiltinNames.v128_mul, builtin_v128_mul);
 
 // v128.div<T!>(a: v128, b: v128) -> v128
 function builtin_v128_div(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -4816,6 +5044,8 @@ builtins.set(BuiltinNames.v128_div, builtin_v128_div);
 
 // v128.add_sat<T!>(a: v128, b: v128) -> v128
 function builtin_v128_add_sat(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -4849,6 +5079,8 @@ builtins.set(BuiltinNames.v128_add_sat, builtin_v128_add_sat);
 
 // v128.sub_sat<T!>(a: v128, b: v128) -> v128
 function builtin_v128_sub_sat(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -4882,6 +5114,8 @@ builtins.set(BuiltinNames.v128_sub_sat, builtin_v128_sub_sat);
 
 // v128.min<T!>(a: v128, b: v128) -> v128
 function builtin_v128_min(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -4927,6 +5161,8 @@ builtins.set(BuiltinNames.v128_min, builtin_v128_min);
 
 // v128.max<T!>(a: v128, b: v128) -> v128
 function builtin_v128_max(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -4972,6 +5208,8 @@ builtins.set(BuiltinNames.v128_max, builtin_v128_max);
 
 // v128.pmin<T!>(a: v128, b: v128) -> v128
 function builtin_v128_pmin(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5003,6 +5241,8 @@ builtins.set(BuiltinNames.v128_pmin, builtin_v128_pmin);
 
 // v128.pmax<T!>(a: v128, b: v128) -> v128
 function builtin_v128_pmax(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5034,6 +5274,8 @@ builtins.set(BuiltinNames.v128_pmax, builtin_v128_pmax);
 
 // v128.dot<T!>(a: v128, b: v128) -> v128
 function builtin_v128_dot(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5064,6 +5306,8 @@ builtins.set(BuiltinNames.v128_dot, builtin_v128_dot);
 
 // v128.avgr<T!>(a: v128, b: v128) -> v128
 function builtin_v128_avgr(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5095,6 +5339,8 @@ builtins.set(BuiltinNames.v128_avgr, builtin_v128_avgr);
 
 // v128.eq<T!>(a: v128, b: v128) -> v128
 function builtin_v128_eq(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5136,6 +5382,8 @@ builtins.set(BuiltinNames.v128_eq, builtin_v128_eq);
 
 // v128.ne<T!>(a: v128, b: v128) -> v128
 function builtin_v128_ne(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5177,6 +5425,8 @@ builtins.set(BuiltinNames.v128_ne, builtin_v128_ne);
 
 // v128.lt<T!>(a: v128, b: v128) -> v128
 function builtin_v128_lt(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5221,6 +5471,8 @@ builtins.set(BuiltinNames.v128_lt, builtin_v128_lt);
 
 // v128.le<T!>(a: v128, b: v128) -> v128
 function builtin_v128_le(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5265,6 +5517,8 @@ builtins.set(BuiltinNames.v128_le, builtin_v128_le);
 
 // v128.gt<T!>(a: v128, b: v128) -> v128
 function builtin_v128_gt(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5309,6 +5563,8 @@ builtins.set(BuiltinNames.v128_gt, builtin_v128_gt);
 
 // v128.ge<T!>(a: v128, b: v128) -> v128
 function builtin_v128_ge(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5353,6 +5609,8 @@ builtins.set(BuiltinNames.v128_ge, builtin_v128_ge);
 
 // v128.narrow<T!>(a: v128, b: v128) -> v128
 function builtin_v128_narrow(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5386,6 +5644,8 @@ builtins.set(BuiltinNames.v128_narrow, builtin_v128_narrow);
 
 // v128.neg<T!>(a: v128) -> v128
 function builtin_v128_neg(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5433,6 +5693,8 @@ builtins.set(BuiltinNames.v128_neg, builtin_v128_neg);
 
 // v128.abs<T!>(a: v128) -> v128
 function builtin_v128_abs(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5473,6 +5735,8 @@ builtins.set(BuiltinNames.v128_abs, builtin_v128_abs);
 
 // v128.sqrt<T!>(a: v128) -> v128
 function builtin_v128_sqrt(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5503,6 +5767,8 @@ builtins.set(BuiltinNames.v128_sqrt, builtin_v128_sqrt);
 
 // v128.ceil<T!>(a: v128) -> v128
 function builtin_v128_ceil(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5533,6 +5799,8 @@ builtins.set(BuiltinNames.v128_ceil, builtin_v128_ceil);
 
 // v128.floor<T!>(a: v128) -> v128
 function builtin_v128_floor(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5563,6 +5831,8 @@ builtins.set(BuiltinNames.v128_floor, builtin_v128_floor);
 
 // v128.trunc<T!>(a: v128) -> v128
 function builtin_v128_trunc(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5593,6 +5863,8 @@ builtins.set(BuiltinNames.v128_trunc, builtin_v128_trunc);
 
 // v128.nearest<T!>(a: v128) -> v128
 function builtin_v128_nearest(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5623,6 +5895,8 @@ builtins.set(BuiltinNames.v128_nearest, builtin_v128_nearest);
 
 // v128.convert<T!>(a: v128) -> v128
 function builtin_v128_convert(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5661,6 +5935,8 @@ builtins.set(BuiltinNames.v128_convert, builtin_v128_convert);
 
 // v128.convert_low<T!>(a: v128) -> v128
 function builtin_v128_convert_low(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5699,6 +5975,8 @@ builtins.set(BuiltinNames.v128_convert_low, builtin_v128_convert_low);
 
 // v128.trunc_sat<T!>(a: v128) -> v128
 function builtin_v128_trunc_sat(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5737,6 +6015,8 @@ builtins.set(BuiltinNames.v128_trunc_sat, builtin_v128_trunc_sat);
 
 // v128.trunc_sat_zero<T!>(a: v128) -> v128
 function builtin_v128_trunc_sat_zero(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5775,6 +6055,8 @@ builtins.set(BuiltinNames.v128_trunc_sat_zero, builtin_v128_trunc_sat_zero);
 
 // v128.extend_low<T!>(a: v128) -> v128
 function builtin_v128_extend_low(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5817,6 +6099,8 @@ builtins.set(BuiltinNames.v128_extend_low, builtin_v128_extend_low);
 
 // v128.extend_high<T!>(a: v128) -> v128
 function builtin_v128_extend_high(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5859,6 +6143,8 @@ builtins.set(BuiltinNames.v128_extend_high, builtin_v128_extend_high);
 
 // v128.shl<T!>(a: v128, b: i32) -> v128
 function builtin_v128_shl(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5905,6 +6191,8 @@ builtins.set(BuiltinNames.v128_shl, builtin_v128_shl);
 
 // v128.shr<T!>(a: v128, b: i32) -> v128
 function builtin_v128_shr(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5957,6 +6245,8 @@ function builtin_v128_shr(ctx: BuiltinContext): ExpressionRef {
 builtins.set(BuiltinNames.v128_shr, builtin_v128_shr);
 
 function builtin_v128_bitwise_binary(ctx: BuiltinContext, op: BinaryOp): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -5975,29 +6265,39 @@ function builtin_v128_bitwise_binary(ctx: BuiltinContext, op: BinaryOp): Express
 
 // v128.and(a: v128, b: v128) -> v128
 function builtin_v128_and(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_v128_bitwise_binary(ctx, BinaryOp.AndV128);
 }
 builtins.set(BuiltinNames.v128_and, builtin_v128_and);
 
 // v128.or(a: v128, b: v128) -> v128
 function builtin_v128_or(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_v128_bitwise_binary(ctx, BinaryOp.OrV128);
 }
 builtins.set(BuiltinNames.v128_or, builtin_v128_or);
 
 // v128.xor(a: v128, b: v128) -> v128
 function builtin_v128_xor(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_v128_bitwise_binary(ctx, BinaryOp.XorV128);
 }
 builtins.set(BuiltinNames.v128_xor, builtin_v128_xor);
 
 // v128.andnot(a: v128, b: v128) -> v128
 function builtin_v128_andnot(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_v128_bitwise_binary(ctx, BinaryOp.AndnotV128);
 }
 builtins.set(BuiltinNames.v128_andnot, builtin_v128_andnot);
 
 function builtin_v128_bitwise_unary(ctx: BuiltinContext, op: UnaryOp): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -6015,11 +6315,15 @@ function builtin_v128_bitwise_unary(ctx: BuiltinContext, op: UnaryOp): Expressio
 
 // v128.not(a: v128) -> v128
 function builtin_v128_not(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_v128_bitwise_unary(ctx, UnaryOp.NotV128);
 }
 builtins.set(BuiltinNames.v128_not, builtin_v128_not);
 
 function builtin_v128_bitwise_ternary(ctx: BuiltinContext, op: SIMDTernaryOp): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -6039,12 +6343,16 @@ function builtin_v128_bitwise_ternary(ctx: BuiltinContext, op: SIMDTernaryOp): E
 
 // v128.bitselect(v1: v128, v2: v128, c: v128) -> v128
 function builtin_v128_bitselect(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   return builtin_v128_bitwise_ternary(ctx, SIMDTernaryOp.Bitselect);
 }
 builtins.set(BuiltinNames.v128_bitselect, builtin_v128_bitselect);
 
 // v128.any_true(a: v128) -> bool
 function builtin_v128_any_true(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -6064,6 +6372,8 @@ builtins.set(BuiltinNames.v128_any_true, builtin_v128_any_true);
 
 // v128.all_true<T!>(a: v128) -> bool
 function builtin_v128_all_true(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -6104,6 +6414,8 @@ builtins.set(BuiltinNames.v128_all_true, builtin_v128_all_true);
 
 // v128.bitmask<T!>(a: v128) -> i32
 function builtin_v128_bitmask(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -6142,6 +6454,8 @@ builtins.set(BuiltinNames.v128_bitmask, builtin_v128_bitmask);
 
 // v128.popcnt<T!>(a: v128) -> v128
 function builtin_v128_popcnt(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -6172,6 +6486,8 @@ builtins.set(BuiltinNames.v128_popcnt, builtin_v128_popcnt);
 
 // v128.extadd_pairwise<T!>(a: v128) -> v128
 function builtin_v128_extadd_pairwise(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -6204,6 +6520,8 @@ builtins.set(BuiltinNames.v128_extadd_pairwise, builtin_v128_extadd_pairwise);
 
 // v128.demote_zero<T?>(a: v128) -> v128
 function builtin_v128_demote_zero(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -6234,6 +6552,8 @@ builtins.set(BuiltinNames.v128_demote_zero, builtin_v128_demote_zero);
 
 // v128.promote_low<T?>(a: v128) -> v128
 function builtin_v128_promote_low(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -6264,6 +6584,8 @@ builtins.set(BuiltinNames.v128_promote_low, builtin_v128_promote_low);
 
 // v128.q15mulr_sat<T!>(a: v128, b: v128) -> v128
 function builtin_v128_q15mulr_sat(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -6294,6 +6616,8 @@ builtins.set(BuiltinNames.v128_q15mulr_sat, builtin_v128_q15mulr_sat);
 
 // v128.extmul_low<T!>(a: v128, b: v128) -> v128
 function builtin_v128_extmul_low(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -6329,6 +6653,8 @@ builtins.set(BuiltinNames.v128_extmul_low, builtin_v128_extmul_low);
 
 // v128.extmul_high<T!>(a: v128, b: v128) -> v128
 function builtin_v128_extmul_high(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -6366,6 +6692,8 @@ builtins.set(BuiltinNames.v128_extmul_high, builtin_v128_extmul_high);
 
 // __visit_globals(cookie: u32) -> void
 function builtin_visit_globals(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -6385,6 +6713,8 @@ builtins.set(BuiltinNames.visit_globals, builtin_visit_globals);
 
 // __visit_members(ref: usize, cookie: u32) -> void
 function builtin_visit_members(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var module = compiler.module;
   if (
@@ -6412,6 +6742,8 @@ builtins.set(BuiltinNames.visit_members, builtin_visit_members);
 
 // i32.clz -> clz<i32>
 function builtin_i32_clz(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -6421,6 +6753,8 @@ builtins.set(BuiltinNames.i32_clz, builtin_i32_clz);
 
 // i64.clz -> clz<i64>
 function builtin_i64_clz(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i64;
@@ -6430,6 +6764,8 @@ builtins.set(BuiltinNames.i64_clz, builtin_i64_clz);
 
 // i32.ctz -> ctz<i32>
 function builtin_i32_ctz(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -6439,6 +6775,8 @@ builtins.set(BuiltinNames.i32_ctz, builtin_i32_ctz);
 
 // i64.ctz -> ctz<i64>
 function builtin_i64_ctz(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i64;
@@ -6448,6 +6786,8 @@ builtins.set(BuiltinNames.i64_ctz, builtin_i64_ctz);
 
 // i32.popcnt -> popcnt<i32>
 function builtin_i32_popcnt(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -6457,6 +6797,8 @@ builtins.set(BuiltinNames.i32_popcnt, builtin_i32_popcnt);
 
 // i64.popcnt -> popcnt<i64>
 function builtin_i64_popcnt(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i64;
@@ -6466,6 +6808,8 @@ builtins.set(BuiltinNames.i64_popcnt, builtin_i64_popcnt);
 
 // i32.rotl -> rotl<i32>
 function builtin_i32_rotl(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -6475,6 +6819,8 @@ builtins.set(BuiltinNames.i32_rotl, builtin_i32_rotl);
 
 // i64.rotl -> rotl<i64>
 function builtin_i64_rotl(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i64;
@@ -6484,6 +6830,8 @@ builtins.set(BuiltinNames.i64_rotl, builtin_i64_rotl);
 
 // i32.rotr -> rotr<i32>
 function builtin_i32_rotr(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -6493,6 +6841,8 @@ builtins.set(BuiltinNames.i32_rotr, builtin_i32_rotr);
 
 // i64.rotr -> rotr<i64>
 function builtin_i64_rotr(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i64;
@@ -6502,6 +6852,8 @@ builtins.set(BuiltinNames.i64_rotr, builtin_i64_rotr);
 
 // f32.abs -> abs<f32>
 function builtin_f32_abs(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.f32;
@@ -6511,6 +6863,8 @@ builtins.set(BuiltinNames.f32_abs, builtin_f32_abs);
 
 // f64.abs -> abs<f64>
 function builtin_f64_abs(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.f64;
@@ -6520,6 +6874,8 @@ builtins.set(BuiltinNames.f64_abs, builtin_f64_abs);
 
 // f32.max -> max<f32>
 function builtin_f32_max(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.f32;
@@ -6529,6 +6885,8 @@ builtins.set(BuiltinNames.f32_max, builtin_f32_max);
 
 // f64.max -> max<f64>
 function builtin_f64_max(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.f64;
@@ -6538,6 +6896,8 @@ builtins.set(BuiltinNames.f64_max, builtin_f64_max);
 
 // f32.min -> min<f32>
 function builtin_f32_min(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.f32;
@@ -6547,6 +6907,8 @@ builtins.set(BuiltinNames.f32_min, builtin_f32_min);
 
 // f64.min -> min<f64>
 function builtin_f64_min(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.f64;
@@ -6556,6 +6918,8 @@ builtins.set(BuiltinNames.f64_min, builtin_f64_min);
 
 // f32.ceil -> ceil<f32>
 function builtin_f32_ceil(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.f32;
@@ -6565,6 +6929,8 @@ builtins.set(BuiltinNames.f32_ceil, builtin_f32_ceil);
 
 // f64.ceil -> ceil<f64>
 function builtin_f64_ceil(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.f64;
@@ -6574,6 +6940,8 @@ builtins.set(BuiltinNames.f64_ceil, builtin_f64_ceil);
 
 // f32.floor -> floor<f32>
 function builtin_f32_floor(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.f32;
@@ -6583,6 +6951,8 @@ builtins.set(BuiltinNames.f32_floor, builtin_f32_floor);
 
 // f64.floor -> floor<f64>
 function builtin_f64_floor(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.f64;
@@ -6592,6 +6962,8 @@ builtins.set(BuiltinNames.f64_floor, builtin_f64_floor);
 
 // f32.copysign -> copysign<f32>
 function builtin_f32_copysign(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.f32;
@@ -6601,6 +6973,8 @@ builtins.set(BuiltinNames.f32_copysign, builtin_f32_copysign);
 
 // f64.copysign -> copysign<f64>
 function builtin_f64_copysign(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.f64;
@@ -6610,6 +6984,8 @@ builtins.set(BuiltinNames.f64_copysign, builtin_f64_copysign);
 
 // f32.nearest -> nearest<f32>
 function builtin_f32_nearest(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.f32;
@@ -6619,6 +6995,8 @@ builtins.set(BuiltinNames.f32_nearest, builtin_f32_nearest);
 
 // f64.nearest -> nearest<f64>
 function builtin_f64_nearest(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.f64;
@@ -6628,6 +7006,8 @@ builtins.set(BuiltinNames.f64_nearest, builtin_f64_nearest);
 
 // i32.reinterpret_f32 -> reinterpret<i32>
 function builtin_i32_reinterpret_f32(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.f32;
@@ -6637,6 +7017,8 @@ builtins.set(BuiltinNames.i32_reinterpret_f32, builtin_i32_reinterpret_f32);
 
 // i64.reinterpret_f64 -> reinterpret<i64>
 function builtin_i64_reinterpret_f64(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.f64;
@@ -6646,6 +7028,8 @@ builtins.set(BuiltinNames.i64_reinterpret_f64, builtin_i64_reinterpret_f64);
 
 // f32.reinterpret_i32 -> reinterpret<f32>
 function builtin_f32_reinterpret_i32(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.i32;
@@ -6655,6 +7039,8 @@ builtins.set(BuiltinNames.f32_reinterpret_i32, builtin_f32_reinterpret_i32);
 
 // f64.reinterpret_i64 -> reinterpret<f64>
 function builtin_f64_reinterpret_i64(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.i64;
@@ -6664,6 +7050,8 @@ builtins.set(BuiltinNames.f64_reinterpret_i64, builtin_f64_reinterpret_i64);
 
 // f32.sqrt -> sqrt<f32>
 function builtin_f32_sqrt(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.f32;
@@ -6673,6 +7061,8 @@ builtins.set(BuiltinNames.f32_sqrt, builtin_f32_sqrt);
 
 // f64.sqrt -> sqrt<f64>
 function builtin_f64_sqrt(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.f64;
@@ -6682,6 +7072,8 @@ builtins.set(BuiltinNames.f64_sqrt, builtin_f64_sqrt);
 
 // f32.trunc -> trunc<f32>
 function builtin_f32_trunc(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.f32;
@@ -6691,6 +7083,8 @@ builtins.set(BuiltinNames.f32_trunc, builtin_f32_trunc);
 
 // f64.trunc -> trunc<f64>
 function builtin_f64_trunc(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.f64;
@@ -6700,6 +7094,8 @@ builtins.set(BuiltinNames.f64_trunc, builtin_f64_trunc);
 
 // i32.rem_s -> rem<i32>
 function builtin_i32_rem_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -6709,6 +7105,8 @@ builtins.set(BuiltinNames.i32_rem_s, builtin_i32_rem_s);
 
 // i32.rem_u -> rem<u32>
 function builtin_i32_rem_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.u32;
@@ -6718,6 +7116,8 @@ builtins.set(BuiltinNames.i32_rem_u, builtin_i32_rem_u);
 
 // i64.rem_s -> rem<i64>
 function builtin_i64_rem_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i64;
@@ -6727,6 +7127,8 @@ builtins.set(BuiltinNames.i64_rem_s, builtin_i64_rem_s);
 
 // i64.rem_u -> rem<u64>
 function builtin_i64_rem_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u64 ];
   ctx.contextualType = Type.u64;
@@ -6736,6 +7138,8 @@ builtins.set(BuiltinNames.i64_rem_u, builtin_i64_rem_u);
 
 // i32.add -> add<i32>
 function builtin_i32_add(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -6745,6 +7149,8 @@ builtins.set(BuiltinNames.i32_add, builtin_i32_add);
 
 // i64.add -> add<i64>
 function builtin_i64_add(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i64;
@@ -6754,6 +7160,8 @@ builtins.set(BuiltinNames.i64_add, builtin_i64_add);
 
 // f32.add -> add<f32>
 function builtin_f32_add(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.f32;
@@ -6763,6 +7171,8 @@ builtins.set(BuiltinNames.f32_add, builtin_f32_add);
 
 // f64.add -> add<f64>
 function builtin_f64_add(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.f64;
@@ -6772,6 +7182,8 @@ builtins.set(BuiltinNames.f64_add, builtin_f64_add);
 
 // i32.sub -> sub<i32>
 function builtin_i32_sub(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -6781,6 +7193,8 @@ builtins.set(BuiltinNames.i32_sub, builtin_i32_sub);
 
 // i64.sub -> sub<i64>
 function builtin_i64_sub(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i64;
@@ -6790,6 +7204,8 @@ builtins.set(BuiltinNames.i64_sub, builtin_i64_sub);
 
 // f32.sub -> sub<f32>
 function builtin_f32_sub(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.f32;
@@ -6799,6 +7215,8 @@ builtins.set(BuiltinNames.f32_sub, builtin_f32_sub);
 
 // f64.sub -> sub<f64>
 function builtin_f64_sub(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.f64;
@@ -6808,6 +7226,8 @@ builtins.set(BuiltinNames.f64_sub, builtin_f64_sub);
 
 // i32.mul -> mul<i32>
 function builtin_i32_mul(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -6817,6 +7237,8 @@ builtins.set(BuiltinNames.i32_mul, builtin_i32_mul);
 
 // i64.mul -> mul<i64>
 function builtin_i64_mul(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i64;
@@ -6826,6 +7248,8 @@ builtins.set(BuiltinNames.i64_mul, builtin_i64_mul);
 
 // f32.mul -> mul<f32>
 function builtin_f32_mul(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.f32;
@@ -6835,6 +7259,8 @@ builtins.set(BuiltinNames.f32_mul, builtin_f32_mul);
 
 // f64.mul -> mul<f64>
 function builtin_f64_mul(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.f64;
@@ -6844,6 +7270,8 @@ builtins.set(BuiltinNames.f64_mul, builtin_f64_mul);
 
 // i32.div_s -> div<i32>
 function builtin_i32_div_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -6853,6 +7281,8 @@ builtins.set(BuiltinNames.i32_div_s, builtin_i32_div_s);
 
 // i32.div_u -> div<u32>
 function builtin_i32_div_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.u32;
@@ -6862,6 +7292,8 @@ builtins.set(BuiltinNames.i32_div_u, builtin_i32_div_u);
 
 // i64.div_s -> div_s<i64>
 function builtin_i64_div_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i64;
@@ -6871,6 +7303,8 @@ builtins.set(BuiltinNames.i64_div_s, builtin_i64_div_s);
 
 // i64.div_u -> div_u<u64>
 function builtin_i64_div_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u64 ];
   ctx.contextualType = Type.u64;
@@ -6880,6 +7314,8 @@ builtins.set(BuiltinNames.i64_div_u, builtin_i64_div_u);
 
 // f32.div -> div<f32>
 function builtin_f32_div(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.f32;
@@ -6889,6 +7325,8 @@ builtins.set(BuiltinNames.f32_div, builtin_f32_div);
 
 // f64.div -> div<f64>
 function builtin_f64_div(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.f64;
@@ -6898,6 +7336,8 @@ builtins.set(BuiltinNames.f64_div, builtin_f64_div);
 
 // i32.eq -> eq<i32>
 function builtin_i32_eq(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -6907,6 +7347,8 @@ builtins.set(BuiltinNames.i32_eq, builtin_i32_eq);
 
 // i64.eq -> eq<i64>
 function builtin_i64_eq(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i32;
@@ -6916,6 +7358,8 @@ builtins.set(BuiltinNames.i64_eq, builtin_i64_eq);
 
 // f32.eq -> eq<f32>
 function builtin_f32_eq(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.i32;
@@ -6925,6 +7369,8 @@ builtins.set(BuiltinNames.f32_eq, builtin_f32_eq);
 
 // f64.eq -> eq<f64>
 function builtin_f64_eq(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.i32;
@@ -6934,6 +7380,8 @@ builtins.set(BuiltinNames.f64_eq, builtin_f64_eq);
 
 // i32.ne -> ne<i32>
 function builtin_i32_ne(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -6943,6 +7391,8 @@ builtins.set(BuiltinNames.i32_ne, builtin_i32_ne);
 
 // i64.ne -> ne<i64>
 function builtin_i64_ne(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i32;
@@ -6952,6 +7402,8 @@ builtins.set(BuiltinNames.i64_ne, builtin_i64_ne);
 
 // f32.ne -> ne<f32>
 function builtin_f32_ne(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.i32;
@@ -6961,6 +7413,8 @@ builtins.set(BuiltinNames.f32_ne, builtin_f32_ne);
 
 // f64.ne-> ne<f64>
 function builtin_f64_ne(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.i32;
@@ -6970,6 +7424,8 @@ builtins.set(BuiltinNames.f64_ne, builtin_f64_ne);
 
 // i32.load8_s -> <i32>load<i8>
 function builtin_i32_load8_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.i32;
@@ -6979,6 +7435,8 @@ builtins.set(BuiltinNames.i32_load8_s, builtin_i32_load8_s);
 
 // i32.load8_u -> <i32>load<u8>
 function builtin_i32_load8_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.i32;
@@ -6988,6 +7446,8 @@ builtins.set(BuiltinNames.i32_load8_u, builtin_i32_load8_u);
 
 // i32.load16_s -> <i32>load<i16>
 function builtin_i32_load16_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.i32;
@@ -6997,6 +7457,8 @@ builtins.set(BuiltinNames.i32_load16_s, builtin_i32_load16_s);
 
 // i32.load16_u -> <i32>load<u16>
 function builtin_i32_load16_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.i32;
@@ -7006,6 +7468,8 @@ builtins.set(BuiltinNames.i32_load16_u, builtin_i32_load16_u);
 
 // i32.load -> <i32>load<i32>
 function builtin_i32_load(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -7015,6 +7479,8 @@ builtins.set(BuiltinNames.i32_load, builtin_i32_load);
 
 // i64.load8_s -> <i64>load<i8>
 function builtin_i64_load8_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.i64;
@@ -7024,6 +7490,8 @@ builtins.set(BuiltinNames.i64_load8_s, builtin_i64_load8_s);
 
 // i64.load8_u -> <i64>load<u8>
 function builtin_i64_load8_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.i64;
@@ -7033,6 +7501,8 @@ builtins.set(BuiltinNames.i64_load8_u, builtin_i64_load8_u);
 
 // i64.load16_s -> <i64>load<i16>
 function builtin_i64_load16_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.i64;
@@ -7042,6 +7512,8 @@ builtins.set(BuiltinNames.i64_load16_s, builtin_i64_load16_s);
 
 // i64.load16_u -> <i64>load<u16>
 function builtin_i64_load16_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.i64;
@@ -7051,6 +7523,8 @@ builtins.set(BuiltinNames.i64_load16_u, builtin_i64_load16_u);
 
 // i64.load32_s -> <i64>load<i32>
 function builtin_i64_load32_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i64;
@@ -7060,6 +7534,8 @@ builtins.set(BuiltinNames.i64_load32_s, builtin_i64_load32_s);
 
 // i64.load32_u -> <i64>load<u32>
 function builtin_i64_load32_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.i64;
@@ -7069,6 +7545,8 @@ builtins.set(BuiltinNames.i64_load32_u, builtin_i64_load32_u);
 
 // i64.load -> <i64>load<i64>
 function builtin_i64_load(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i64;
@@ -7078,6 +7556,8 @@ builtins.set(BuiltinNames.i64_load, builtin_i64_load);
 
 // f32.load -> <f32>load<f32>
 function builtin_f32_load(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.f32;
@@ -7087,6 +7567,8 @@ builtins.set(BuiltinNames.f32_load, builtin_f32_load);
 
 // f64.load -> <f64>load<f64>
 function builtin_f64_load(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.f64;
@@ -7096,6 +7578,8 @@ builtins.set(BuiltinNames.f64_load, builtin_f64_load);
 
 // i32.store8 -> store<i8 from i32>
 function builtin_i32_store8(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.i32;
@@ -7106,6 +7590,8 @@ builtins.set(BuiltinNames.i32_store8, builtin_i32_store8);
 
 // i32.store16 -> store<i16 from i32>
 function builtin_i32_store16(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.i32;
@@ -7116,6 +7602,8 @@ builtins.set(BuiltinNames.i32_store16, builtin_i32_store16);
 
 // i32.store -> store<i32 from i32>
 function builtin_i32_store(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -7126,6 +7614,8 @@ builtins.set(BuiltinNames.i32_store, builtin_i32_store);
 
 // i64.store8 -> store<i8 from i64>
 function builtin_i64_store8(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.i64;
@@ -7136,6 +7626,8 @@ builtins.set(BuiltinNames.i64_store8, builtin_i64_store8);
 
 // i64.store16 -> store<i16 from i64>
 function builtin_i64_store16(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.i64;
@@ -7146,6 +7638,8 @@ builtins.set(BuiltinNames.i64_store16, builtin_i64_store16);
 
 // i64.store32 -> store<i32 from i64>
 function builtin_i64_store32(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i64;
@@ -7156,6 +7650,8 @@ builtins.set(BuiltinNames.i64_store32, builtin_i64_store32);
 
 // i64.store -> store<i64 from i64>
 function builtin_i64_store(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i64;
@@ -7166,6 +7662,8 @@ builtins.set(BuiltinNames.i64_store, builtin_i64_store);
 
 // f32.store -> store<f32 from f64>
 function builtin_f32_store(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.f32;
@@ -7176,6 +7674,8 @@ builtins.set(BuiltinNames.f32_store, builtin_f32_store);
 
 // f64.store -> store<f64 from f64>
 function builtin_f64_store(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.f64;
@@ -7186,6 +7686,8 @@ builtins.set(BuiltinNames.f64_store, builtin_f64_store);
 
 // i32.atomic.load8_u -> <i32>atomic.load<u8>
 function builtin_i32_atomic_load8_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.i32;
@@ -7195,6 +7697,8 @@ builtins.set(BuiltinNames.i32_atomic_load8_u, builtin_i32_atomic_load8_u);
 
 // i32.atomic.load16_u -> <i32>atomic.load<u16>
 function builtin_i32_atomic_load16_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.i32;
@@ -7204,6 +7708,8 @@ builtins.set(BuiltinNames.i32_atomic_load16_u, builtin_i32_atomic_load16_u);
 
 // i32.atomic.load -> <i32>atomic.load<i32>
 function builtin_i32_atomic_load(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -7213,6 +7719,8 @@ builtins.set(BuiltinNames.i32_atomic_load, builtin_i32_atomic_load);
 
 // i64.atomic.load8_u -> <i64>atomic.load<u8>
 function builtin_i64_atomic_load8_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.i64;
@@ -7222,6 +7730,8 @@ builtins.set(BuiltinNames.i64_atomic_load8_u, builtin_i64_atomic_load8_u);
 
 // i64.atomic.load16_u -> <i64>atomic.load<u16>
 function builtin_i64_atomic_load16_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.i64;
@@ -7231,6 +7741,8 @@ builtins.set(BuiltinNames.i64_atomic_load16_u, builtin_i64_atomic_load16_u);
 
 // i64.atomic.load32_u -> <i64>atomic.load<u32>
 function builtin_i64_atomic_load32_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.i64;
@@ -7240,6 +7752,8 @@ builtins.set(BuiltinNames.i64_atomic_load32_u, builtin_i64_atomic_load32_u);
 
 // i64.atomic.load -> <i64>atomic.load<i64>
 function builtin_i64_atomic_load(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i64;
@@ -7249,6 +7763,8 @@ builtins.set(BuiltinNames.i64_atomic_load, builtin_i64_atomic_load);
 
 // i32.atomic.store8 -> atomic.store<i8 from i32>
 function builtin_i32_atomic_store8(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.i32;
@@ -7259,6 +7775,8 @@ builtins.set(BuiltinNames.i32_atomic_store8, builtin_i32_atomic_store8);
 
 // i32.atomic.store16 -> atomic.store<i16 from i32>
 function builtin_i32_atomic_store16(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.i32;
@@ -7269,6 +7787,8 @@ builtins.set(BuiltinNames.i32_atomic_store16, builtin_i32_atomic_store16);
 
 // i32.atomic.store -> atomic.store<i32 from i32>
 function builtin_i32_atomic_store(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -7279,6 +7799,8 @@ builtins.set(BuiltinNames.i32_atomic_store, builtin_i32_atomic_store);
 
 // i64.atomic.store8 -> atomic.store<i8 from i64>
 function builtin_i64_atomic_store8(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.i64;
@@ -7289,6 +7811,8 @@ builtins.set(BuiltinNames.i64_atomic_store8, builtin_i64_atomic_store8);
 
 // i64.atomic.store16 -> atomic.store<i16 from i64>
 function builtin_i64_atomic_store16(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.i64;
@@ -7299,6 +7823,8 @@ builtins.set(BuiltinNames.i64_atomic_store16, builtin_i64_atomic_store16);
 
 // i64.atomic.store32 -> atomic.store<i32 from i64>
 function builtin_i64_atomic_store32(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i64;
@@ -7309,6 +7835,8 @@ builtins.set(BuiltinNames.i64_atomic_store32, builtin_i64_atomic_store32);
 
 // i64.atomic.store -> atomic.store<i64 from i64>
 function builtin_i64_atomic_store(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i64;
@@ -7319,6 +7847,8 @@ builtins.set(BuiltinNames.i64_atomic_store, builtin_i64_atomic_store);
 
 // i32.atomic.rmw8.add_u -> <i32>atomic.add<u8 from i32>
 function builtin_i32_atomic_rmw8_add_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.i32;
@@ -7329,6 +7859,8 @@ builtins.set(BuiltinNames.i32_atomic_rmw8_add_u, builtin_i32_atomic_rmw8_add_u);
 
 // i32.atomic.rmw16.add_u -> <i32>atomic.add<u16 from i32>
 function builtin_i32_atomic_rmw16_add_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.i32;
@@ -7339,6 +7871,8 @@ builtins.set(BuiltinNames.i32_atomic_rmw16_add_u, builtin_i32_atomic_rmw16_add_u
 
 // i32.atomic.rmw.add -> <i32>atomic.add<i32 from i32>
 function builtin_i32_atomic_rmw_add(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -7349,6 +7883,8 @@ builtins.set(BuiltinNames.i32_atomic_rmw_add, builtin_i32_atomic_rmw_add);
 
 // i64.atomic.rmw8.add_u -> <i64>atomic.add<u8 from i64>
 function builtin_i64_atomic_rmw8_add_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.i64;
@@ -7359,6 +7895,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw8_add_u, builtin_i64_atomic_rmw8_add_u);
 
 // i64.atomic.rmw16.add_u -> <i64>atomic.add<u16 from i64>
 function builtin_i64_atomic_rmw16_add_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.i64;
@@ -7369,6 +7907,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw16_add_u, builtin_i64_atomic_rmw16_add_u
 
 // i64.atomic.rmw32.add_u -> <i64>atomic.add<u32 from i64>
 function builtin_i64_atomic_rmw32_add_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.i64;
@@ -7379,6 +7919,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw32_add_u, builtin_i64_atomic_rmw32_add_u
 
 // i64.atomic.rmw.add -> <i64>atomic.add<i64 from i64>
 function builtin_i64_atomic_rmw_add(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i64;
@@ -7389,6 +7931,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw_add, builtin_i64_atomic_rmw_add);
 
 // i32.atomic.rmw8.sub_u -> <i32>atomic.sub<u8 from i32>
 function builtin_i32_atomic_rmw8_sub_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.i32;
@@ -7399,6 +7943,8 @@ builtins.set(BuiltinNames.i32_atomic_rmw8_sub_u, builtin_i32_atomic_rmw8_sub_u);
 
 // i32.atomic.rmw16.sub_u -> <i32>atomic.sub<u16 from i32>
 function builtin_i32_atomic_rmw16_sub_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.i32;
@@ -7409,6 +7955,8 @@ builtins.set(BuiltinNames.i32_atomic_rmw16_sub_u, builtin_i32_atomic_rmw16_sub_u
 
 // i32.atomic.rmw.sub -> <i32>atomic.sub<i32 from i32>
 function builtin_i32_atomic_rmw_sub(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -7419,6 +7967,8 @@ builtins.set(BuiltinNames.i32_atomic_rmw_sub, builtin_i32_atomic_rmw_sub);
 
 // i64.atomic.rmw8.sub_u -> <i64>atomic.sub<u8 from i64>
 function builtin_i64_atomic_rmw8_sub_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.i64;
@@ -7429,6 +7979,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw8_sub_u, builtin_i64_atomic_rmw8_sub_u);
 
 // i64.atomic.rmw16.sub_u -> <i64>atomic.sub<u16 from i64>
 function builtin_i64_atomic_rmw16_sub_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.i64;
@@ -7439,6 +7991,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw16_sub_u, builtin_i64_atomic_rmw16_sub_u
 
 // i64.atomic.rmw32.sub_u -> <i64>atomic.sub<u32 from i64>
 function builtin_i64_atomic_rmw32_sub_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.i64;
@@ -7449,6 +8003,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw32_sub_u, builtin_i64_atomic_rmw32_sub_u
 
 // i64.atomic.rmw.sub -> <i64>atomic.sub<i64 from i64>
 function builtin_i64_atomic_rmw_sub(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i64;
@@ -7459,6 +8015,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw_sub, builtin_i64_atomic_rmw_sub);
 
 // i32.atomic.rmw8.and_u -> <i32>atomic.and<u8 from i32>
 function builtin_i32_atomic_rmw8_and_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.i32;
@@ -7469,6 +8027,8 @@ builtins.set(BuiltinNames.i32_atomic_rmw8_and_u, builtin_i32_atomic_rmw8_and_u);
 
 // i32.atomic.rmw16.and_u -> <i32>atomic.and<u16 from i32>
 function builtin_i32_atomic_rmw16_and_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.i32;
@@ -7479,6 +8039,8 @@ builtins.set(BuiltinNames.i32_atomic_rmw16_and_u, builtin_i32_atomic_rmw16_and_u
 
 // i32.atomic.rmw.and -> <i32>atomic.and<i32 from i32>
 function builtin_i32_atomic_rmw_and(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -7489,6 +8051,8 @@ builtins.set(BuiltinNames.i32_atomic_rmw_and, builtin_i32_atomic_rmw_and);
 
 // i64.atomic.rmw8.and_u -> <i64>atomic.and<u8 from i64>
 function builtin_i64_atomic_rmw8_and_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.i64;
@@ -7499,6 +8063,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw8_and_u, builtin_i64_atomic_rmw8_and_u);
 
 // i64.atomic.rmw16.and_u -> <i64>atomic.and<u16 from i64>
 function builtin_i64_atomic_rmw16_and_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.i64;
@@ -7509,6 +8075,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw16_and_u, builtin_i64_atomic_rmw16_and_u
 
 // i64.atomic.rmw32.and_u -> <i64>atomic.and<u32 from i64>
 function builtin_i64_atomic_rmw32_and_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.i64;
@@ -7519,6 +8087,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw32_and_u, builtin_i64_atomic_rmw32_and_u
 
 // i64.atomic.rmw.and -> <i64>atomic.and<i64 from i64>
 function builtin_i64_atomic_rmw_and(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i64;
@@ -7529,6 +8099,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw_and, builtin_i64_atomic_rmw_and);
 
 // i32.atomic.rmw8.or_u -> <i32>atomic.or<u8 from i32>
 function builtin_i32_atomic_rmw8_or_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.i32;
@@ -7539,6 +8111,8 @@ builtins.set(BuiltinNames.i32_atomic_rmw8_or_u, builtin_i32_atomic_rmw8_or_u);
 
 // i32.atomic.rmw16.or_u -> <i32atomic.or<u16 from i32>
 function builtin_i32_atomic_rmw16_or_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.i32;
@@ -7549,6 +8123,8 @@ builtins.set(BuiltinNames.i32_atomic_rmw16_or_u, builtin_i32_atomic_rmw16_or_u);
 
 // i32.atomic.rmw.or -> <i32>atomic.or<i32 from i32>
 function builtin_i32_atomic_rmw_or(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -7559,6 +8135,8 @@ builtins.set(BuiltinNames.i32_atomic_rmw_or, builtin_i32_atomic_rmw_or);
 
 // i64.atomic.rmw8.or_u -> <i64>atomic.or<u8 from i64>
 function builtin_i64_atomic_rmw8_or_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.i64;
@@ -7569,6 +8147,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw8_or_u, builtin_i64_atomic_rmw8_or_u);
 
 // i64.atomic.rmw16.or_u -> <i64>atomic.or<u16 from i64>
 function builtin_i64_atomic_rmw16_or_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.i64;
@@ -7579,6 +8159,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw16_or_u, builtin_i64_atomic_rmw16_or_u);
 
 // i64.atomic.rmw32.or_u -> <i64>atomic.or<u32 from i64>
 function builtin_i64_atomic_rmw32_or_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.i64;
@@ -7589,6 +8171,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw32_or_u, builtin_i64_atomic_rmw32_or_u);
 
 // i64.atomic.rmw.or -> <i64>atomic.or<i64 from i64>
 function builtin_i64_atomic_rmw_or(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i64;
@@ -7599,6 +8183,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw_or, builtin_i64_atomic_rmw_or);
 
 // i32.atomic.rmw8.xor_u -> <i32>atomic.xor<u8 from i32>
 function builtin_i32_atomic_rmw8_xor_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.i32;
@@ -7609,6 +8195,8 @@ builtins.set(BuiltinNames.i32_atomic_rmw8_xor_u, builtin_i32_atomic_rmw8_xor_u);
 
 // i32.atomic.rmw16.xor_u -> <i32>atomic.xor<u16 from i32>
 function builtin_i32_atomic_rmw16_xor_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.i32;
@@ -7619,6 +8207,8 @@ builtins.set(BuiltinNames.i32_atomic_rmw16_xor_u, builtin_i32_atomic_rmw16_xor_u
 
 // i32.atomic.rmw.xor -> <i32>atomic.xor<i32 from i32>
 function builtin_i32_atomic_rmw_xor(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -7629,6 +8219,8 @@ builtins.set(BuiltinNames.i32_atomic_rmw_xor, builtin_i32_atomic_rmw_xor);
 
 // i64.atomic.rmw8.xor_u -> <i64>atomic.xor<u8 from i64>
 function builtin_i64_atomic_rmw8_xor_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.i64;
@@ -7639,6 +8231,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw8_xor_u, builtin_i64_atomic_rmw8_xor_u);
 
 // i64.atomic.rmw16.xor_u -> <i64>atomic.xor<u16 from i64>
 function builtin_i64_atomic_rmw16_xor_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.i64;
@@ -7649,6 +8243,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw16_xor_u, builtin_i64_atomic_rmw16_xor_u
 
 // i64.atomic.rmw32.xor_u -> <i64>atomic.xor<u32 from i64>
 function builtin_i64_atomic_rmw32_xor_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.i64;
@@ -7659,6 +8255,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw32_xor_u, builtin_i64_atomic_rmw32_xor_u
 
 // i64.atomic.rmw.xor -> <i64>atomic.xor<i64 from i64>
 function builtin_i64_atomic_rmw_xor(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i64;
@@ -7669,6 +8267,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw_xor, builtin_i64_atomic_rmw_xor);
 
 // i32.atomic.rmw8.xchg_u -> <i32>atomic.xchg<u8 from i32>
 function builtin_i32_atomic_rmw8_xchg_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.i32;
@@ -7679,6 +8279,8 @@ builtins.set(BuiltinNames.i32_atomic_rmw8_xchg_u, builtin_i32_atomic_rmw8_xchg_u
 
 // i32.atomic.rmw16.xchg_u -> <i32>atomic.xchg<u16 from i32>
 function builtin_i32_atomic_rmw16_xchg_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.i32;
@@ -7689,6 +8291,8 @@ builtins.set(BuiltinNames.i32_atomic_rmw16_xchg_u, builtin_i32_atomic_rmw16_xchg
 
 // i32.atomic.rmw.xchg -> <i32>atomic.xchg<i32 from i32>
 function builtin_i32_atomic_rmw_xchg(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -7699,6 +8303,8 @@ builtins.set(BuiltinNames.i32_atomic_rmw_xchg, builtin_i32_atomic_rmw_xchg);
 
 // i64.atomic.rmw8.xchg_u -> <i64>atomic.xchg<u8 from i64>
 function builtin_i64_atomic_rmw8_xchg_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.i64;
@@ -7709,6 +8315,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw8_xchg_u, builtin_i64_atomic_rmw8_xchg_u
 
 // i64.atomic.rmw16.xchg_u -> <i64>atomic.xchg<u16 from i64>
 function builtin_i64_atomic_rmw16_xchg_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.i64;
@@ -7719,6 +8327,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw16_xchg_u, builtin_i64_atomic_rmw16_xchg
 
 // i64.atomic.rmw32.xchg_u -> <i64>atomic.xchg<u32 from i64>
 function builtin_i64_atomic_rmw32_xchg_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.i64;
@@ -7729,6 +8339,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw32_xchg_u, builtin_i64_atomic_rmw32_xchg
 
 // i64.atomic.rmw.xchg -> <i64>atomic.xchg<i64 from i64>
 function builtin_i64_atomic_rmw_xchg(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i64;
@@ -7739,6 +8351,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw_xchg, builtin_i64_atomic_rmw_xchg);
 
 // i32.atomic.rmw8.cmpxchg_u -> <i32>atomic.cmpxchg<u8 from i32>
 function builtin_i32_atomic_rmw8_cmpxchg_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.i32;
@@ -7749,6 +8363,8 @@ builtins.set(BuiltinNames.i32_atomic_rmw8_cmpxchg_u, builtin_i32_atomic_rmw8_cmp
 
 // i32.atomic.rmw16.cmpxchg_u -> <i32>atomic.cmpxchg<u16 from i32>
 function builtin_i32_atomic_rmw16_cmpxchg_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.i32;
@@ -7759,6 +8375,8 @@ builtins.set(BuiltinNames.i32_atomic_rmw16_cmpxchg_u, builtin_i32_atomic_rmw16_c
 
 // i32.atomic.rmw.cmpxchg -> <i32>atomic.cmpxchg<i32 from i32>
 function builtin_i32_atomic_rmw_cmpxchg(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -7769,6 +8387,8 @@ builtins.set(BuiltinNames.i32_atomic_rmw_cmpxchg, builtin_i32_atomic_rmw_cmpxchg
 
 // i64.atomic.rmw8.cmpxchg_u -> <i64>atomic.cmpxchg<u8 from i64>
 function builtin_i64_atomic_rmw8_cmpxchg_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.i64;
@@ -7779,6 +8399,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw8_cmpxchg_u, builtin_i64_atomic_rmw8_cmp
 
 // i64.atomic.rmw16.cmpxchg_u -> <i64>atomic.cmpxchg<u16 from i64>
 function builtin_i64_atomic_rmw16_cmpxchg_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.i64;
@@ -7789,6 +8411,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw16_cmpxchg_u, builtin_i64_atomic_rmw16_c
 
 // i64.atomic.rmw32.cmpxchg_u -> <i64>atomic.cmpxchg<u32 from i64>
 function builtin_i64_atomic_rmw32_cmpxchg_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.i64;
@@ -7799,6 +8423,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw32_cmpxchg_u, builtin_i64_atomic_rmw32_c
 
 // i64.atomic.rmw.cmpxchg -> <i64>atomic.cmpxchg<i64 from i64>
 function builtin_i64_atomic_rmw_cmpxchg(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i64;
@@ -7809,6 +8435,8 @@ builtins.set(BuiltinNames.i64_atomic_rmw_cmpxchg, builtin_i64_atomic_rmw_cmpxchg
 
 // i32.wait -> atomic.wait<i32>
 function builtin_i32_wait(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   return builtin_atomic_wait(ctx);
@@ -7817,6 +8445,8 @@ builtins.set(BuiltinNames.i32_wait, builtin_i32_wait);
 
 // i64.wait -> atomic.wait<i64>
 function builtin_i64_wait(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i32;
@@ -7826,6 +8456,8 @@ builtins.set(BuiltinNames.i64_wait, builtin_i64_wait);
 
 // v128.load -> load<v128>
 function builtin_v128_load(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.v128 ];
   ctx.contextualType = Type.v128;
@@ -7835,6 +8467,8 @@ builtins.set(BuiltinNames.v128_load, builtin_v128_load);
 
 // v128.load8x8_s -> v128.load_ext<i8>
 function builtin_v128_load8x8_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -7844,6 +8478,8 @@ builtins.set(BuiltinNames.v128_load8x8_s, builtin_v128_load8x8_s);
 
 // v128.load8x8_u -> v128.load_ext<u8>
 function builtin_v128_load8x8_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.v128;
@@ -7853,6 +8489,8 @@ builtins.set(BuiltinNames.v128_load8x8_u, builtin_v128_load8x8_u);
 
 // v128.load16x4_s -> v128.load_ext<i16>
 function builtin_v128_load16x4_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -7862,6 +8500,8 @@ builtins.set(BuiltinNames.v128_load16x4_s, builtin_v128_load16x4_s);
 
 // v128.load16x4_u -> v128.load_ext<u16>
 function builtin_v128_load16x4_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.v128;
@@ -7871,6 +8511,8 @@ builtins.set(BuiltinNames.v128_load16x4_u, builtin_v128_load16x4_u);
 
 // v128.load32x2_s -> v128.load_ext<i32>
 function builtin_v128_load32x2_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -7880,6 +8522,8 @@ builtins.set(BuiltinNames.v128_load32x2_s, builtin_v128_load32x2_s);
 
 // v128.load32x2_u -> v128.load_ext<u32>
 function builtin_v128_load32x2_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.v128;
@@ -7889,6 +8533,8 @@ builtins.set(BuiltinNames.v128_load32x2_u, builtin_v128_load32x2_u);
 
 // v128.load8_splat -> v128.load_splat<u8>
 function builtin_v128_load8_splat(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.v128;
@@ -7898,6 +8544,8 @@ builtins.set(BuiltinNames.v128_load8_splat, builtin_v128_load8_splat);
 
 // v128.load16_splat -> v128.load_splat<u16>
 function builtin_v128_load16_splat(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.v128;
@@ -7907,6 +8555,8 @@ builtins.set(BuiltinNames.v128_load16_splat, builtin_v128_load16_splat);
 
 // v128.load32_splat -> v128.load_splat<u32>
 function builtin_v128_load32_splat(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.v128;
@@ -7916,6 +8566,8 @@ builtins.set(BuiltinNames.v128_load32_splat, builtin_v128_load32_splat);
 
 // v128.load64_splat -> v128.load_splat<u64>
 function builtin_v128_load64_splat(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u64 ];
   ctx.contextualType = Type.v128;
@@ -7925,6 +8577,8 @@ builtins.set(BuiltinNames.v128_load64_splat, builtin_v128_load64_splat);
 
 // v128.load32_zero -> v128.load_zero<u32>
 function builtin_v128_load32_zero(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.v128;
@@ -7934,6 +8588,8 @@ builtins.set(BuiltinNames.v128_load32_zero, builtin_v128_load32_zero);
 
 // v128.load64_zero -> v128.load_zero<u64>
 function builtin_v128_load64_zero(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u64 ];
   ctx.contextualType = Type.v128;
@@ -7943,6 +8599,8 @@ builtins.set(BuiltinNames.v128_load64_zero, builtin_v128_load64_zero);
 
 // v128.load8_lane -> v128.load_lane<u8>
 function builtin_v128_load8_lane(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.v128;
@@ -7952,6 +8610,8 @@ builtins.set(BuiltinNames.v128_load8_lane, builtin_v128_load8_lane);
 
 // v128.load16_lane -> v128.load_lane<u16>
 function builtin_v128_load16_lane(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.v128;
@@ -7961,6 +8621,8 @@ builtins.set(BuiltinNames.v128_load16_lane, builtin_v128_load16_lane);
 
 // v128.load32_lane -> v128.load_lane<u32>
 function builtin_v128_load32_lane(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.v128;
@@ -7970,6 +8632,8 @@ builtins.set(BuiltinNames.v128_load32_lane, builtin_v128_load32_lane);
 
 // v128.load64_lane -> v128.load_lane<u64>
 function builtin_v128_load64_lane(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u64 ];
   ctx.contextualType = Type.v128;
@@ -7979,6 +8643,8 @@ builtins.set(BuiltinNames.v128_load64_lane, builtin_v128_load64_lane);
 
 // v128.store8_lane -> v128.store_lane<u8>
 function builtin_v128_store8_lane(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.v128;
@@ -7988,6 +8654,8 @@ builtins.set(BuiltinNames.v128_store8_lane, builtin_v128_store8_lane);
 
 // v128.store16_lane -> v128.store_lane<u16>
 function builtin_v128_store16_lane(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.v128;
@@ -7997,6 +8665,8 @@ builtins.set(BuiltinNames.v128_store16_lane, builtin_v128_store16_lane);
 
 // v128.store32_lane -> v128.store_lane<u32>
 function builtin_v128_store32_lane(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.v128;
@@ -8006,6 +8676,8 @@ builtins.set(BuiltinNames.v128_store32_lane, builtin_v128_store32_lane);
 
 // v128.store64_lane -> v128.store_lane<u64>
 function builtin_v128_store64_lane(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u64 ];
   ctx.contextualType = Type.v128;
@@ -8015,6 +8687,8 @@ builtins.set(BuiltinNames.v128_store64_lane, builtin_v128_store64_lane);
 
 // v128.store -> store<v128 from v128>
 function builtin_v128_store(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.v128 ];
   ctx.contextualType = Type.v128;
@@ -8025,6 +8699,8 @@ builtins.set(BuiltinNames.v128_store, builtin_v128_store);
 
 // i8x16_splat -> v128.splat<i8>
 function builtin_i8x16_splat(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8034,6 +8710,8 @@ builtins.set(BuiltinNames.i8x16_splat, builtin_i8x16_splat);
 
 // i8x16.extract_lane_s -> <i32>v128.extract_lane<i8>
 function builtin_i8x16_extract_lane_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.i32;
@@ -8043,6 +8721,8 @@ builtins.set(BuiltinNames.i8x16_extract_lane_s, builtin_i8x16_extract_lane_s);
 
 // i8x16.extract_lane_u -> <i32>v128.extract_lane<u8>
 function builtin_i8x16_extract_lane_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.i32;
@@ -8052,6 +8732,8 @@ builtins.set(BuiltinNames.i8x16_extract_lane_u, builtin_i8x16_extract_lane_u);
 
 // i8x16.replace_lane -> v128.replace_lane<i8>
 function builtin_i8x16_replace_lane(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8061,6 +8743,8 @@ builtins.set(BuiltinNames.i8x16_replace_lane, builtin_i8x16_replace_lane);
 
 // i8x16.add -> v128.add<i8>
 function builtin_i8x16_add(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8070,6 +8754,8 @@ builtins.set(BuiltinNames.i8x16_add, builtin_i8x16_add);
 
 // i8x16.sub -> v128.sub<i8>
 function builtin_i8x16_sub(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8079,6 +8765,8 @@ builtins.set(BuiltinNames.i8x16_sub, builtin_i8x16_sub);
 
 // i8x16.min_s -> v128.min<i8>
 function builtin_i8x16_min_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8088,6 +8776,8 @@ builtins.set(BuiltinNames.i8x16_min_s, builtin_i8x16_min_s);
 
 // i8x16.min_u -> v128.min<u8>
 function builtin_i8x16_min_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.v128;
@@ -8097,6 +8787,8 @@ builtins.set(BuiltinNames.i8x16_min_u, builtin_i8x16_min_u);
 
 // i8x16.max_s -> v128.max<i8>
 function builtin_i8x16_max_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8106,6 +8798,8 @@ builtins.set(BuiltinNames.i8x16_max_s, builtin_i8x16_max_s);
 
 // i8x16.max_u -> v128.max<u8>
 function builtin_i8x16_max_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.v128;
@@ -8115,6 +8809,8 @@ builtins.set(BuiltinNames.i8x16_max_u, builtin_i8x16_max_u);
 
 // i8x16.avgr_u -> v128.avgr<u8>
 function builtin_i8x16_avgr_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.v128;
@@ -8124,6 +8820,8 @@ builtins.set(BuiltinNames.i8x16_avgr_u, builtin_i8x16_avgr_u);
 
 // i8x16.abs -> v128.abs<i8>
 function builtin_i8x16_abs(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8133,6 +8831,8 @@ builtins.set(BuiltinNames.i8x16_abs, builtin_i8x16_abs);
 
 // i8x16.neg -> v128.neg<i8>
 function builtin_i8x16_neg(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8142,6 +8842,8 @@ builtins.set(BuiltinNames.i8x16_neg, builtin_i8x16_neg);
 
 // i8x16.add_sat_s -> v128.add_sat<i8>
 function builtin_i8x16_add_sat_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8151,6 +8853,8 @@ builtins.set(BuiltinNames.i8x16_add_sat_s, builtin_i8x16_add_sat_s);
 
 // i8x16.add_sat_u -> v128.add_sat<u8>
 function builtin_i8x16_add_sat_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.v128;
@@ -8160,6 +8864,8 @@ builtins.set(BuiltinNames.i8x16_add_sat_u, builtin_i8x16_add_sat_u);
 
 // i8x16.sub_sat_s -> v128.sub_sat<i8>
 function builtin_i8x16_sub_sat_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8169,6 +8875,8 @@ builtins.set(BuiltinNames.i8x16_sub_sat_s, builtin_i8x16_sub_sat_s);
 
 // i8x16.sub_sat_u -> v128.sub_sat<u8>
 function builtin_i8x16_sub_sat_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.v128;
@@ -8178,6 +8886,8 @@ builtins.set(BuiltinNames.i8x16_sub_sat_u, builtin_i8x16_sub_sat_u);
 
 // i8x16.shl -> v128.shl<i8>
 function builtin_i8x16_shl(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8187,6 +8897,8 @@ builtins.set(BuiltinNames.i8x16_shl, builtin_i8x16_shl);
 
 // i8x16.shr_s -> v128.shr<i8>
 function builtin_i8x16_shr_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8196,6 +8908,8 @@ builtins.set(BuiltinNames.i8x16_shr_s, builtin_i8x16_shr_s);
 
 // i8x16.shr_u -> v128.shr<u8>
 function builtin_i8x16_shr_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.v128;
@@ -8205,6 +8919,8 @@ builtins.set(BuiltinNames.i8x16_shr_u, builtin_i8x16_shr_u);
 
 // i8x16.all_true -> v128.all_true<i8>
 function builtin_i8x16_all_true(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.i32;
@@ -8214,6 +8930,8 @@ builtins.set(BuiltinNames.i8x16_all_true, builtin_i8x16_all_true);
 
 // i8x16.bitmask -> v128.bitmask<i8>
 function builtin_i8x16_bitmask(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.i32;
@@ -8223,6 +8941,8 @@ builtins.set(BuiltinNames.i8x16_bitmask, builtin_i8x16_bitmask);
 
 // i8x16.popcnt -> v128.popcnt<i8>
 function builtin_i8x16_popcnt(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8232,6 +8952,8 @@ builtins.set(BuiltinNames.i8x16_popcnt, builtin_i8x16_popcnt);
 
 // i8x16.eq -> v128.eq<i8>
 function builtin_i8x16_eq(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8241,6 +8963,8 @@ builtins.set(BuiltinNames.i8x16_eq, builtin_i8x16_eq);
 
 // i8x16.ne -> v128.ne<i8>
 function builtin_i8x16_ne(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8250,6 +8974,8 @@ builtins.set(BuiltinNames.i8x16_ne, builtin_i8x16_ne);
 
 // i8x16.lt_s -> v128.lt<i8>
 function builtin_i8x16_lt_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8259,6 +8985,8 @@ builtins.set(BuiltinNames.i8x16_lt_s, builtin_i8x16_lt_s);
 
 // i8x16.lt_u -> v128.lt<u8>
 function builtin_i8x16_lt_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.v128;
@@ -8268,6 +8996,8 @@ builtins.set(BuiltinNames.i8x16_lt_u, builtin_i8x16_lt_u);
 
 // i8x16.le_s -> v128.le<i8>
 function builtin_i8x16_le_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8277,6 +9007,8 @@ builtins.set(BuiltinNames.i8x16_le_s, builtin_i8x16_le_s);
 
 // i8x16.le_u -> v128.le<u8>
 function builtin_i8x16_le_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.v128;
@@ -8286,6 +9018,8 @@ builtins.set(BuiltinNames.i8x16_le_u, builtin_i8x16_le_u);
 
 // i8x16.gt_s -> v128.gt<i8>
 function builtin_i8x16_gt_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8295,6 +9029,8 @@ builtins.set(BuiltinNames.i8x16_gt_s, builtin_i8x16_gt_s);
 
 // i8x16.gt_u -> v128.gt<u8>
 function builtin_i8x16_gt_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.v128;
@@ -8304,6 +9040,8 @@ builtins.set(BuiltinNames.i8x16_gt_u, builtin_i8x16_gt_u);
 
 // i8x16.ge_s -> v128.ge<i8>
 function builtin_i8x16_ge_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8313,6 +9051,8 @@ builtins.set(BuiltinNames.i8x16_ge_s, builtin_i8x16_ge_s);
 
 // i8x16.ge_u -> v128.ge<u8>
 function builtin_i8x16_ge_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.v128;
@@ -8322,6 +9062,8 @@ builtins.set(BuiltinNames.i8x16_ge_u, builtin_i8x16_ge_u);
 
 // i8x16.narrow_i16x8_s -> v128.narrow<i16>
 function builtin_i8x16_narrow_i16x8_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -8331,6 +9073,8 @@ builtins.set(BuiltinNames.i8x16_narrow_i16x8_s, builtin_i8x16_narrow_i16x8_s);
 
 // i8x16.narrow_i16x8_u -> v128.narrow<u16>
 function builtin_i8x16_narrow_i16x8_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.v128;
@@ -8340,6 +9084,8 @@ builtins.set(BuiltinNames.i8x16_narrow_i16x8_u, builtin_i8x16_narrow_i16x8_u);
 
 // i8x16.shuffle -> v128.shuffle<i8>
 function builtin_i8x16_shuffle(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8349,6 +9095,8 @@ builtins.set(BuiltinNames.i8x16_shuffle, builtin_i8x16_shuffle);
 
 // i8x16.swizzle -> v128.swizzle
 function builtin_i8x16_swizzle(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = null;
   ctx.contextualType = Type.v128;
@@ -8358,6 +9106,8 @@ builtins.set(BuiltinNames.i8x16_swizzle, builtin_i8x16_swizzle);
 
 // i16x8.splat -> v128.splat<i16>
 function builtin_i16x8_splat(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -8367,6 +9117,8 @@ builtins.set(BuiltinNames.i16x8_splat, builtin_i16x8_splat);
 
 // i16x8.extract_lane_s -> v128.extract_lane<i16>
 function builtin_i16x8_extract_lane_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.i32;
@@ -8376,6 +9128,8 @@ builtins.set(BuiltinNames.i16x8_extract_lane_s, builtin_i16x8_extract_lane_s);
 
 // i16x8..extract_lane_u -> v128.extract_lane<u16>
 function builtin_i16x8_extract_lane_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.i32;
@@ -8385,6 +9139,8 @@ builtins.set(BuiltinNames.i16x8_extract_lane_u, builtin_i16x8_extract_lane_u);
 
 // i16x8.replace_lane -> v128.replace_lane<i16>
 function builtin_i16x8_replace_lane(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -8394,6 +9150,8 @@ builtins.set(BuiltinNames.i16x8_replace_lane, builtin_i16x8_replace_lane);
 
 // i16x8.add -> v128.add<i16>
 function builtin_i16x8_add(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -8403,6 +9161,8 @@ builtins.set(BuiltinNames.i16x8_add, builtin_i16x8_add);
 
 // i16x8.sub -> v128.sub<i16>
 function builtin_i16x8_sub(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -8412,6 +9172,8 @@ builtins.set(BuiltinNames.i16x8_sub, builtin_i16x8_sub);
 
 // i16x8.mul -> v128.mul<i16>
 function builtin_i16x8_mul(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -8421,6 +9183,8 @@ builtins.set(BuiltinNames.i16x8_mul, builtin_i16x8_mul);
 
 // i16x8.min_s -> v128.min<i16>
 function builtin_i16x8_min_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -8430,6 +9194,8 @@ builtins.set(BuiltinNames.i16x8_min_s, builtin_i16x8_min_s);
 
 // i16x8.min_u -> v128.min<u16>
 function builtin_i16x8_min_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.v128;
@@ -8439,6 +9205,8 @@ builtins.set(BuiltinNames.i16x8_min_u, builtin_i16x8_min_u);
 
 // i16x8.max_s -> v128.max<i16>
 function builtin_i16x8_max_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -8448,6 +9216,8 @@ builtins.set(BuiltinNames.i16x8_max_s, builtin_i16x8_max_s);
 
 // i16x8.max_u -> v128.max<u16>
 function builtin_i16x8_max_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.v128;
@@ -8457,6 +9227,8 @@ builtins.set(BuiltinNames.i16x8_max_u, builtin_i16x8_max_u);
 
 // i16x8.avgr_u -> v128.avgr<u16>
 function builtin_i16x8_avgr_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.v128;
@@ -8466,6 +9238,8 @@ builtins.set(BuiltinNames.i16x8_avgr_u, builtin_i16x8_avgr_u);
 
 // i16x8.abs -> v128.abs<i16>
 function builtin_i16x8_abs(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -8475,6 +9249,8 @@ builtins.set(BuiltinNames.i16x8_abs, builtin_i16x8_abs);
 
 // i16x8.neg -> v128.neg<i16>
 function builtin_i16x8_neg(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -8484,6 +9260,8 @@ builtins.set(BuiltinNames.i16x8_neg, builtin_i16x8_neg);
 
 // i16x8.add_sat_s -> v128.add_sat<i16>
 function builtin_i16x8_add_sat_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -8493,6 +9271,8 @@ builtins.set(BuiltinNames.i16x8_add_sat_s, builtin_i16x8_add_sat_s);
 
 // i16x8.add_sat_u -> v128.add_sat<u16>
 function builtin_i16x8_add_sat_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.v128;
@@ -8502,6 +9282,8 @@ builtins.set(BuiltinNames.i16x8_add_sat_u, builtin_i16x8_add_sat_u);
 
 // i16x8.sub_sat_s -> v128.sub_sat<i16>
 function builtin_i16x8_sub_sat_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -8511,6 +9293,8 @@ builtins.set(BuiltinNames.i16x8_sub_sat_s, builtin_i16x8_sub_sat_s);
 
 // i16x8.sub_sat_u -> v128.sub_sat<u16>
 function builtin_i16x8_sub_sat_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.v128;
@@ -8520,6 +9304,8 @@ builtins.set(BuiltinNames.i16x8_sub_sat_u, builtin_i16x8_sub_sat_u);
 
 // i16x8.shl -> v128.shl<i16>
 function builtin_i16x8_shl(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -8529,6 +9315,8 @@ builtins.set(BuiltinNames.i16x8_shl, builtin_i16x8_shl);
 
 // i16x8.shr_s -> v128.shr<i16>
 function builtin_i16x8_shr_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -8538,6 +9326,8 @@ builtins.set(BuiltinNames.i16x8_shr_s, builtin_i16x8_shr_s);
 
 // i16x8.shr_u -> v128.shr<u16>
 function builtin_i16x8_shr_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.v128;
@@ -8547,6 +9337,8 @@ builtins.set(BuiltinNames.i16x8_shr_u, builtin_i16x8_shr_u);
 
 // i16x8.all_true -> v128.all_true<i16>
 function builtin_i16x8_all_true(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.i32;
@@ -8556,6 +9348,8 @@ builtins.set(BuiltinNames.i16x8_all_true, builtin_i16x8_all_true);
 
 // i16x8.bitmask -> v128.bitmask<i16>
 function builtin_i16x8_bitmask(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.i32;
@@ -8565,6 +9359,8 @@ builtins.set(BuiltinNames.i16x8_bitmask, builtin_i16x8_bitmask);
 
 // i16x8.eq -> v128.eq<i16>
 function builtin_i16x8_eq(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -8574,6 +9370,8 @@ builtins.set(BuiltinNames.i16x8_eq, builtin_i16x8_eq);
 
 // i16x8.ne -> v128.ne<i16>
 function builtin_i16x8_ne(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -8583,6 +9381,8 @@ builtins.set(BuiltinNames.i16x8_ne, builtin_i16x8_ne);
 
 // i16x8.lt_s -> v128.lt<i16>
 function builtin_i16x8_lt_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -8592,6 +9392,8 @@ builtins.set(BuiltinNames.i16x8_lt_s, builtin_i16x8_lt_s);
 
 // i16x8.lt_u -> v128.lt<u16>
 function builtin_i16x8_lt_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.v128;
@@ -8601,6 +9403,8 @@ builtins.set(BuiltinNames.i16x8_lt_u, builtin_i16x8_lt_u);
 
 // i16x8.le_s -> v128.le<i16>
 function builtin_i16x8_le_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -8610,6 +9414,8 @@ builtins.set(BuiltinNames.i16x8_le_s, builtin_i16x8_le_s);
 
 // i16x8.le_u -> v128.le<u16>
 function builtin_i16x8_le_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.v128;
@@ -8619,6 +9425,8 @@ builtins.set(BuiltinNames.i16x8_le_u, builtin_i16x8_le_u);
 
 // i16x8.gt_s -> v128.gt<i16>
 function builtin_i16x8_gt_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -8628,6 +9436,8 @@ builtins.set(BuiltinNames.i16x8_gt_s, builtin_i16x8_gt_s);
 
 // i16x8.gt_u -> v128.gt<u16>
 function builtin_i16x8_gt_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.v128;
@@ -8637,6 +9447,8 @@ builtins.set(BuiltinNames.i16x8_gt_u, builtin_i16x8_gt_u);
 
 // i16x8.ge_s -> v128.ge<i16>
 function builtin_i16x8_ge_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -8646,6 +9458,8 @@ builtins.set(BuiltinNames.i16x8_ge_s, builtin_i16x8_ge_s);
 
 // i16x8.ge_u -> v128.ge<u16>
 function builtin_i16x8_ge_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.v128;
@@ -8655,6 +9469,8 @@ builtins.set(BuiltinNames.i16x8_ge_u, builtin_i16x8_ge_u);
 
 // i16x8.narrow_i32x4_s -> v128.narrow<i32>
 function builtin_i16x8_narrow_i32x4_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -8664,6 +9480,8 @@ builtins.set(BuiltinNames.i16x8_narrow_i32x4_s, builtin_i16x8_narrow_i32x4_s);
 
 // i16x8.narrow_i32x4_u -> v128.narrow<u32>
 function builtin_i16x8_narrow_i32x4_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.v128;
@@ -8673,6 +9491,8 @@ builtins.set(BuiltinNames.i16x8_narrow_i32x4_u, builtin_i16x8_narrow_i32x4_u);
 
 // i16x8.extend_low_i8x16_s -> v128.extend_low<i8>
 function builtin_i16x8_extend_low_i8x16_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8682,6 +9502,8 @@ builtins.set(BuiltinNames.i16x8_extend_low_i8x16_s, builtin_i16x8_extend_low_i8x
 
 // i16x8.extend_low_i8x16_u -> v128.extend_low<u8>
 function builtin_i16x8_extend_low_i8x16_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.v128;
@@ -8691,6 +9513,8 @@ builtins.set(BuiltinNames.i16x8_extend_low_i8x16_u, builtin_i16x8_extend_low_i8x
 
 // i16x8.extend_high_i8x16_s -> v128.extend_high<i8>
 function builtin_i16x8_extend_high_i8x16_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8700,6 +9524,8 @@ builtins.set(BuiltinNames.i16x8_extend_high_i8x16_s, builtin_i16x8_extend_high_i
 
 // i16x8.extend_high_i8x16_u -> v128.extend_high<u8>
 function builtin_i16x8_extend_high_i8x16_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.v128;
@@ -8709,6 +9535,8 @@ builtins.set(BuiltinNames.i16x8_extend_high_i8x16_u, builtin_i16x8_extend_high_i
 
 // i16x8.extadd_pairwise_i8x16_s -> v128.extadd_pairwise<i8>
 function builtin_i16x8_extadd_pairwise_i8x16_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8718,6 +9546,8 @@ builtins.set(BuiltinNames.i16x8_extadd_pairwise_i8x16_s, builtin_i16x8_extadd_pa
 
 // i16x8.extadd_pairwise_i8x16_u -> v128.extadd_pairwise<u8>
 function builtin_i16x8_extadd_pairwise_i8x16_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.v128;
@@ -8727,6 +9557,8 @@ builtins.set(BuiltinNames.i16x8_extadd_pairwise_i8x16_u, builtin_i16x8_extadd_pa
 
 // i16x8.q15mulr_sat_s -> v128.q15mulr_sat<i16>
 function builtin_i16x8_q15mulr_sat_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -8736,6 +9568,8 @@ builtins.set(BuiltinNames.i16x8_q15mulr_sat_s, builtin_i16x8_q15mulr_sat_s);
 
 // i16x8.extmul_low_i8x16_s -> v128.extmul_low<i16>
 function builtin_i16x8_extmul_low_i8x16_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8745,6 +9579,8 @@ builtins.set(BuiltinNames.i16x8_extmul_low_i8x16_s, builtin_i16x8_extmul_low_i8x
 
 // i16x8.extmul_low_i8x16_u -> v128.extmul_low<u16>
 function builtin_i16x8_extmul_low_i8x16_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.v128;
@@ -8754,6 +9590,8 @@ builtins.set(BuiltinNames.i16x8_extmul_low_i8x16_u, builtin_i16x8_extmul_low_i8x
 
 // i16x8.extmul_high_i8x16_s -> v128.extmul_high<i16>
 function builtin_i16x8_extmul_high_i8x16_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i8 ];
   ctx.contextualType = Type.v128;
@@ -8763,6 +9601,8 @@ builtins.set(BuiltinNames.i16x8_extmul_high_i8x16_s, builtin_i16x8_extmul_high_i
 
 // i16x8.extmul_high_i8x16_u -> v128.extmul_high<u16>
 function builtin_i16x8_extmul_high_i8x16_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u8 ];
   ctx.contextualType = Type.v128;
@@ -8772,6 +9612,8 @@ builtins.set(BuiltinNames.i16x8_extmul_high_i8x16_u, builtin_i16x8_extmul_high_i
 
 // i32x4.splat -> v128.splat<i32>
 function builtin_i32x4_splat(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -8781,6 +9623,8 @@ builtins.set(BuiltinNames.i32x4_splat, builtin_i32x4_splat);
 
 // i32x4.extract_lane -> <i32>v128.extract_lane<i32>
 function builtin_i32x4_extract_lane(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -8790,6 +9634,8 @@ builtins.set(BuiltinNames.i32x4_extract_lane, builtin_i32x4_extract_lane);
 
 // i32x4.replace_lane -> v128.replace_lane<i32>
 function builtin_i32x4_replace_lane(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -8799,6 +9645,8 @@ builtins.set(BuiltinNames.i32x4_replace_lane, builtin_i32x4_replace_lane);
 
 // i32x4.add -> v128.add<i32>
 function builtin_i32x4_add(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -8808,6 +9656,8 @@ builtins.set(BuiltinNames.i32x4_add, builtin_i32x4_add);
 
 // i32x4.sub -> v128.sub<i32>
 function builtin_i32x4_sub(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -8817,6 +9667,8 @@ builtins.set(BuiltinNames.i32x4_sub, builtin_i32x4_sub);
 
 // i32x4.mul -> v128.mul<i32>
 function builtin_i32x4_mul(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -8826,6 +9678,8 @@ builtins.set(BuiltinNames.i32x4_mul, builtin_i32x4_mul);
 
 // i32x4.min_s -> v128.min<i32>
 function builtin_i32x4_min_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -8835,6 +9689,8 @@ builtins.set(BuiltinNames.i32x4_min_s, builtin_i32x4_min_s);
 
 // i32x4.min_u -> v128.min<u32>
 function builtin_i32x4_min_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.v128;
@@ -8844,6 +9700,8 @@ builtins.set(BuiltinNames.i32x4_min_u, builtin_i32x4_min_u);
 
 // i32x4.max_s -> v128.max<i32>
 function builtin_i32x4_max_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -8853,6 +9711,8 @@ builtins.set(BuiltinNames.i32x4_max_s, builtin_i32x4_max_s);
 
 // i32x4.max_u -> v128.max<u32>
 function builtin_i32x4_max_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.v128;
@@ -8862,6 +9722,8 @@ builtins.set(BuiltinNames.i32x4_max_u, builtin_i32x4_max_u);
 
 // i32x4.dot_i16x8_s -> v128.dot<i16>
 function builtin_i32x4_dot_i16x8_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -8871,6 +9733,8 @@ builtins.set(BuiltinNames.i32x4_dot_i16x8_s, builtin_i32x4_dot_i16x8_s);
 
 // i32x4.abs -> v128.abs<i32>
 function builtin_i32x4_abs(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -8880,6 +9744,8 @@ builtins.set(BuiltinNames.i32x4_abs, builtin_i32x4_abs);
 
 // i32x4.neg -> v128.neg<i32>
 function builtin_i32x4_neg(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -8889,6 +9755,8 @@ builtins.set(BuiltinNames.i32x4_neg, builtin_i32x4_neg);
 
 // i32x4.shl -> v128.shl<i32>
 function builtin_i32x4_shl(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -8898,6 +9766,8 @@ builtins.set(BuiltinNames.i32x4_shl, builtin_i32x4_shl);
 
 // i32x4.shr_s -> v128.shr<i32>
 function builtin_i32x4_shr_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -8907,6 +9777,8 @@ builtins.set(BuiltinNames.i32x4_shr_s, builtin_i32x4_shr_s);
 
 // i32x4.shr_u -> v128.shr<u32>
 function builtin_i32x4_shr_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.v128;
@@ -8916,6 +9788,8 @@ builtins.set(BuiltinNames.i32x4_shr_u, builtin_i32x4_shr_u);
 
 // i32x4.all_true -> v128.all_true<i32>
 function builtin_i32x4_all_true(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -8925,6 +9799,8 @@ builtins.set(BuiltinNames.i32x4_all_true, builtin_i32x4_all_true);
 
 // i32x4.bitmask -> v128.bitmask<i32>
 function builtin_i32x4_bitmask(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.i32;
@@ -8934,6 +9810,8 @@ builtins.set(BuiltinNames.i32x4_bitmask, builtin_i32x4_bitmask);
 
 // i32x4.eq -> v128.eq<i32>
 function builtin_i32x4_eq(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -8943,6 +9821,8 @@ builtins.set(BuiltinNames.i32x4_eq, builtin_i32x4_eq);
 
 // i32x4.ne -> v128.ne<i32>
 function builtin_i32x4_ne(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -8952,6 +9832,8 @@ builtins.set(BuiltinNames.i32x4_ne, builtin_i32x4_ne);
 
 // i32x4.lt_s -> v128.lt<i32>
 function builtin_i32x4_lt_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -8961,6 +9843,8 @@ builtins.set(BuiltinNames.i32x4_lt_s, builtin_i32x4_lt_s);
 
 // i32x4.lt_u -> v128.lt<u32>
 function builtin_i32x4_lt_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.v128;
@@ -8970,6 +9854,8 @@ builtins.set(BuiltinNames.i32x4_lt_u, builtin_i32x4_lt_u);
 
 // i32x4.le_s -> v128.le<i32>
 function builtin_i32x4_le_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -8979,6 +9865,8 @@ builtins.set(BuiltinNames.i32x4_le_s, builtin_i32x4_le_s);
 
 // i32x4.le_u -> v128.le<u32>
 function builtin_i32x4_le_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.v128;
@@ -8988,6 +9876,8 @@ builtins.set(BuiltinNames.i32x4_le_u, builtin_i32x4_le_u);
 
 // i32x4.gt_s -> v128.gt<i32>
 function builtin_i32x4_gt_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -8997,6 +9887,8 @@ builtins.set(BuiltinNames.i32x4_gt_s, builtin_i32x4_gt_s);
 
 // i32x4.gt_u -> v128.gt<u32>
 function builtin_i32x4_gt_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.v128;
@@ -9006,6 +9898,8 @@ builtins.set(BuiltinNames.i32x4_gt_u, builtin_i32x4_gt_u);
 
 // i32x4.ge_s -> v128.ge<i32>
 function builtin_i32x4_ge_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -9015,6 +9909,8 @@ builtins.set(BuiltinNames.i32x4_ge_s, builtin_i32x4_ge_s);
 
 // i32x4.ge_u -> v128.ge<u32>
 function builtin_i32x4_ge_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.v128;
@@ -9024,6 +9920,8 @@ builtins.set(BuiltinNames.i32x4_ge_u, builtin_i32x4_ge_u);
 
 // i32x4.trunc_sat_f32x4_s -> v128.trunc_sat<i32>
 function builtin_i32x4_trunc_sat_f32x4_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -9033,6 +9931,8 @@ builtins.set(BuiltinNames.i32x4_trunc_sat_f32x4_s, builtin_i32x4_trunc_sat_f32x4
 
 // i32x4.trunc_sat_f32x4_u -> v128.trunc_sat<u32>
 function builtin_i32x4_trunc_sat_f32x4_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.v128;
@@ -9042,6 +9942,8 @@ builtins.set(BuiltinNames.i32x4_trunc_sat_f32x4_u, builtin_i32x4_trunc_sat_f32x4
 
 // i32x4.trunc_sat_f64x2_s_zero -> v128.trunc_sat_zero<i32>
 function builtin_i32x4_trunc_sat_f64x2_s_zero(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -9051,6 +9953,8 @@ builtins.set(BuiltinNames.i32x4_trunc_sat_f64x2_s_zero, builtin_i32x4_trunc_sat_
 
 // i32x4.trunc_sat_f64x2_u_zero -> v128.trunc_sat_zero<u32>
 function builtin_i32x4_trunc_sat_f64x2_u_zero(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.v128;
@@ -9060,6 +9964,8 @@ builtins.set(BuiltinNames.i32x4_trunc_sat_f64x2_u_zero, builtin_i32x4_trunc_sat_
 
 // i32x4.extend_low_i16x8_s -> // v128.extend_low<i16>
 function builtin_i32x4_extend_low_i16x8_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -9069,6 +9975,8 @@ builtins.set(BuiltinNames.i32x4_extend_low_i16x8_s, builtin_i32x4_extend_low_i16
 
 // i32x4.extend_low_i16x8_u -> v128.extend_low<u16>
 function builtin_i32x4_extend_low_i16x8_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.v128;
@@ -9078,6 +9986,8 @@ builtins.set(BuiltinNames.i32x4_extend_low_i16x8_u, builtin_i32x4_extend_low_i16
 
 // i32x4.extend_high_i16x8_s -> v128.extend_high<i16>
 function builtin_i32x4_extend_high_i16x8_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -9087,6 +9997,8 @@ builtins.set(BuiltinNames.i32x4_extend_high_i16x8_s, builtin_i32x4_extend_high_i
 
 // i32x4.extend_high_i16x8_u -> v128.extend_high<u16>
 function builtin_i32x4_extend_high_i16x8_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.v128;
@@ -9096,6 +10008,8 @@ builtins.set(BuiltinNames.i32x4_extend_high_i16x8_u, builtin_i32x4_extend_high_i
 
 // i32x4.extadd_pairwise_i16x8_s -> v128.extadd_pairwise<i16>
 function builtin_i32x4_extadd_pairwise_i16x8_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -9105,6 +10019,8 @@ builtins.set(BuiltinNames.i32x4_extadd_pairwise_i16x8_s, builtin_i32x4_extadd_pa
 
 // i32x4.extadd_pairwise_i16x8_u -> v128.extadd_pairwise<u16>
 function builtin_i32x4_extadd_pairwise_i16x8_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.v128;
@@ -9114,6 +10030,8 @@ builtins.set(BuiltinNames.i32x4_extadd_pairwise_i16x8_u, builtin_i32x4_extadd_pa
 
 // i32x4.extmul_low_i16x8_s -> v128.extmul_low<i16>
 function builtin_i32x4_extmul_low_i16x8_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -9123,6 +10041,8 @@ builtins.set(BuiltinNames.i32x4_extmul_low_i16x8_s, builtin_i32x4_extmul_low_i16
 
 // i32x4.extmul_low_i16x8_u -> v128.extmul_low<u16>
 function builtin_i32x4_extmul_low_i16x8_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.v128;
@@ -9132,6 +10052,8 @@ builtins.set(BuiltinNames.i32x4_extmul_low_i16x8_u, builtin_i32x4_extmul_low_i16
 
 // i32x4.extmul_high_i16x8_s -> v128.extmul_high<i16>
 function builtin_i32x4_extmul_high_i16x8_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i16 ];
   ctx.contextualType = Type.v128;
@@ -9141,6 +10063,8 @@ builtins.set(BuiltinNames.i32x4_extmul_high_i16x8_s, builtin_i32x4_extmul_high_i
 
 // i32x4.extmul_high_i16x8_u -> v128.extmul_high<u16>
 function builtin_i32x4_extmul_high_i16x8_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u16 ];
   ctx.contextualType = Type.v128;
@@ -9150,6 +10074,8 @@ builtins.set(BuiltinNames.i32x4_extmul_high_i16x8_u, builtin_i32x4_extmul_high_i
 
 // i64x2.splat -> v128.splat<i64>
 function builtin_i64x2_splat(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.v128;
@@ -9159,6 +10085,8 @@ builtins.set(BuiltinNames.i64x2_splat, builtin_i64x2_splat);
 
 // i64x2.extract_lane -> <i64>v128.extract_lane<i64>
 function builtin_i64x2_extract_lane(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i64;
@@ -9168,6 +10096,8 @@ builtins.set(BuiltinNames.i64x2_extract_lane, builtin_i64x2_extract_lane);
 
 // i64x2.replace_lane -> v128.replace_lane<i64>
 function builtin_i64x2_replace_lane(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.v128;
@@ -9177,6 +10107,8 @@ builtins.set(BuiltinNames.i64x2_replace_lane, builtin_i64x2_replace_lane);
 
 // i64x2.add -> v128.add<i64>
 function builtin_i64x2_add(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.v128;
@@ -9186,6 +10118,8 @@ builtins.set(BuiltinNames.i64x2_add, builtin_i64x2_add);
 
 // i64x2.sub -> v128.sub<i64>
 function builtin_i64x2_sub(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.v128;
@@ -9195,6 +10129,8 @@ builtins.set(BuiltinNames.i64x2_sub, builtin_i64x2_sub);
 
 // i64x2.mul -> v128.mul<i64>
 function builtin_i64x2_mul(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.v128;
@@ -9204,6 +10140,8 @@ builtins.set(BuiltinNames.i64x2_mul, builtin_i64x2_mul);
 
 // i64x2.abs -> v128.abs<i64>
 function builtin_i64x2_abs(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.v128;
@@ -9213,6 +10151,8 @@ builtins.set(BuiltinNames.i64x2_abs, builtin_i64x2_abs);
 
 // i64x2.neg -> v128.neg<i64>
 function builtin_i64x2_neg(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.v128;
@@ -9222,6 +10162,8 @@ builtins.set(BuiltinNames.i64x2_neg, builtin_i64x2_neg);
 
 // i64x2.shl -> v128.shl<i64>
 function builtin_i64x2_shl(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.v128;
@@ -9231,6 +10173,8 @@ builtins.set(BuiltinNames.i64x2_shl, builtin_i64x2_shl);
 
 // i64x2.shr_s -> v128.shr<i64>
 function builtin_i64x2_shr_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.v128;
@@ -9240,6 +10184,8 @@ builtins.set(BuiltinNames.i64x2_shr_s, builtin_i64x2_shr_s);
 
 // i64x2.shr_u -> v128.shr<u64>
 function builtin_i64x2_shr_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u64 ];
   ctx.contextualType = Type.v128;
@@ -9249,6 +10195,8 @@ builtins.set(BuiltinNames.i64x2_shr_u, builtin_i64x2_shr_u);
 
 // i64x2.all_true -> v128.all_true<i64>
 function builtin_i64x2_all_true(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i32;
@@ -9258,6 +10206,8 @@ builtins.set(BuiltinNames.i64x2_all_true, builtin_i64x2_all_true);
 
 // i64x2.bitmask -> v128.bitmask<i64>
 function builtin_i64x2_bitmask(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.i32;
@@ -9267,6 +10217,8 @@ builtins.set(BuiltinNames.i64x2_bitmask, builtin_i64x2_bitmask);
 
 // i64x2.eq -> v128.eq<i64>
 function builtin_i64x2_eq(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.v128;
@@ -9276,6 +10228,8 @@ builtins.set(BuiltinNames.i64x2_eq, builtin_i64x2_eq);
 
 // i64x2.ne -> v128.ne<i64>
 function builtin_i64x2_ne(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.v128;
@@ -9285,6 +10239,8 @@ builtins.set(BuiltinNames.i64x2_ne, builtin_i64x2_ne);
 
 // i64x2.lt_s -> v128.lt<i64>
 function builtin_i64x2_lt_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.v128;
@@ -9294,6 +10250,8 @@ builtins.set(BuiltinNames.i64x2_lt_s, builtin_i64x2_lt_s);
 
 // i64x2.le_s -> v128.le<i64>
 function builtin_i64x2_le_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.v128;
@@ -9303,6 +10261,8 @@ builtins.set(BuiltinNames.i64x2_le_s, builtin_i64x2_le_s);
 
 // i64x2.gt_s -> v128.gt<i64>
 function builtin_i64x2_gt_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.v128;
@@ -9312,6 +10272,8 @@ builtins.set(BuiltinNames.i64x2_gt_s, builtin_i64x2_gt_s);
 
 // i64x2.ge_s -> v128.ge<i64>
 function builtin_i64x2_ge_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i64 ];
   ctx.contextualType = Type.v128;
@@ -9321,6 +10283,8 @@ builtins.set(BuiltinNames.i64x2_ge_s, builtin_i64x2_ge_s);
 
 // i64x2.extend_low_i32x4_s -> // v128.extend_low<i32>
 function builtin_i64x2_extend_low_i32x4_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -9330,6 +10294,8 @@ builtins.set(BuiltinNames.i64x2_extend_low_i32x4_s, builtin_i64x2_extend_low_i32
 
 // i64x2.extend_low_i32x4_u -> v128.extend_low<u32>
 function builtin_i64x2_extend_low_i32x4_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.v128;
@@ -9339,6 +10305,8 @@ builtins.set(BuiltinNames.i64x2_extend_low_i32x4_u, builtin_i64x2_extend_low_i32
 
 // i64x2.extend_high_i32x4_s -> v128.extend_high<i32>
 function builtin_i64x2_extend_high_i32x4_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -9348,6 +10316,8 @@ builtins.set(BuiltinNames.i64x2_extend_high_i32x4_s, builtin_i64x2_extend_high_i
 
 // i64x2.extend_high_i32x4_u -> v128.extend_high<u32>
 function builtin_i64x2_extend_high_i32x4_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.v128;
@@ -9357,6 +10327,8 @@ builtins.set(BuiltinNames.i64x2_extend_high_i32x4_u, builtin_i64x2_extend_high_i
 
 // i64x2.extmul_low_i32x4_s -> v128.extmul_low<i32>
 function builtin_i64x2_extmul_low_i32x4_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -9366,6 +10338,8 @@ builtins.set(BuiltinNames.i64x2_extmul_low_i32x4_s, builtin_i64x2_extmul_low_i32
 
 // i64x2.extmul_low_i32x4_u -> v128.extmul_low<u32>
 function builtin_i64x2_extmul_low_i32x4_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.v128;
@@ -9375,6 +10349,8 @@ builtins.set(BuiltinNames.i64x2_extmul_low_i32x4_u, builtin_i64x2_extmul_low_i32
 
 // i64x2.extmul_high_i32x4_s -> v128.extmul_high<i32>
 function builtin_i64x2_extmul_high_i32x4_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -9384,6 +10360,8 @@ builtins.set(BuiltinNames.i64x2_extmul_high_i32x4_s, builtin_i64x2_extmul_high_i
 
 // i64x2.extmul_high_i32x4_u -> v128.extmul_high<u32>
 function builtin_i64x2_extmul_high_i32x4_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.v128;
@@ -9393,6 +10371,8 @@ builtins.set(BuiltinNames.i64x2_extmul_high_i32x4_u, builtin_i64x2_extmul_high_i
 
 // f32x4.splat -> v128.splat<f32>
 function builtin_f32x4_splat(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.v128;
@@ -9402,6 +10382,8 @@ builtins.set(BuiltinNames.f32x4_splat, builtin_f32x4_splat);
 
 // f32x4.extract_lane -> <f32>v128.extract_lane<f32>
 function builtin_f32x4_extract_lane(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.f32;
@@ -9411,6 +10393,8 @@ builtins.set(BuiltinNames.f32x4_extract_lane, builtin_f32x4_extract_lane);
 
 // f32x4.replace_lane -> v128.replace_lane<f32>
 function builtin_f32x4_replace_lane(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.v128;
@@ -9420,6 +10404,8 @@ builtins.set(BuiltinNames.f32x4_replace_lane, builtin_f32x4_replace_lane);
 
 // f32x4.add -> v128.add<f32>
 function builtin_f32x4_add(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.v128;
@@ -9429,6 +10415,8 @@ builtins.set(BuiltinNames.f32x4_add, builtin_f32x4_add);
 
 // f32x4.sub -> v128.sub<f32>
 function builtin_f32x4_sub(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.v128;
@@ -9438,6 +10426,8 @@ builtins.set(BuiltinNames.f32x4_sub, builtin_f32x4_sub);
 
 // f32x4.mul -> v128.mul<f32>
 function builtin_f32x4_mul(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.v128;
@@ -9447,6 +10437,8 @@ builtins.set(BuiltinNames.f32x4_mul, builtin_f32x4_mul);
 
 // f32x4.div -> v128.div<f32>
 function builtin_f32x4_div(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.v128;
@@ -9456,6 +10448,8 @@ builtins.set(BuiltinNames.f32x4_div, builtin_f32x4_div);
 
 // f32x4.neg -> v128.neg<f32>
 function builtin_f32x4_neg(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.v128;
@@ -9465,6 +10459,8 @@ builtins.set(BuiltinNames.f32x4_neg, builtin_f32x4_neg);
 
 // f32x4.min -> v128.min<f32>
 function builtin_f32x4_min(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.v128;
@@ -9474,6 +10470,8 @@ builtins.set(BuiltinNames.f32x4_min, builtin_f32x4_min);
 
 // f32x4.max -> v128.max<f32>
 function builtin_f32x4_max(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.v128;
@@ -9483,6 +10481,8 @@ builtins.set(BuiltinNames.f32x4_max, builtin_f32x4_max);
 
 // f32x4.pmin -> v128.pmin<f32>
 function builtin_f32x4_pmin(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.v128;
@@ -9492,6 +10492,8 @@ builtins.set(BuiltinNames.f32x4_pmin, builtin_f32x4_pmin);
 
 // f32x4.pmax -> v128.pmax<f32>
 function builtin_f32x4_pmax(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.v128;
@@ -9501,6 +10503,8 @@ builtins.set(BuiltinNames.f32x4_pmax, builtin_f32x4_pmax);
 
 // f32x4.abs -> v128.abs<f32>
 function builtin_f32x4_abs(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.v128;
@@ -9510,6 +10514,8 @@ builtins.set(BuiltinNames.f32x4_abs, builtin_f32x4_abs);
 
 // f32x4.sqrt -> v128.sqrt<f32>
 function builtin_f32x4_sqrt(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.v128;
@@ -9519,6 +10525,8 @@ builtins.set(BuiltinNames.f32x4_sqrt, builtin_f32x4_sqrt);
 
 // f32x4.ceil -> v128.ceil<f32>
 function builtin_f32x4_ceil(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.v128;
@@ -9528,6 +10536,8 @@ builtins.set(BuiltinNames.f32x4_ceil, builtin_f32x4_ceil);
 
 // f32x4.floor -> v128.floor<f32>
 function builtin_f32x4_floor(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.v128;
@@ -9537,6 +10547,8 @@ builtins.set(BuiltinNames.f32x4_floor, builtin_f32x4_floor);
 
 // f32x4.trunc -> v128.trunc<f32>
 function builtin_f32x4_trunc(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.v128;
@@ -9546,6 +10558,8 @@ builtins.set(BuiltinNames.f32x4_trunc, builtin_f32x4_trunc);
 
 // f32x4.nearest -> v128.nearest<f32>
 function builtin_f32x4_nearest(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.v128;
@@ -9555,6 +10569,8 @@ builtins.set(BuiltinNames.f32x4_nearest, builtin_f32x4_nearest);
 
 // f32x4.eq -> v128.eq<f32>
 function builtin_f32x4_eq(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.v128;
@@ -9564,6 +10580,8 @@ builtins.set(BuiltinNames.f32x4_eq, builtin_f32x4_eq);
 
 // f32x4.ne -> v128.ne<f32>
 function builtin_f32x4_ne(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.v128;
@@ -9573,6 +10591,8 @@ builtins.set(BuiltinNames.f32x4_ne, builtin_f32x4_ne);
 
 // f32x4.lt -> v128.lt<f32>
 function builtin_f32x4_lt(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.v128;
@@ -9582,6 +10602,8 @@ builtins.set(BuiltinNames.f32x4_lt, builtin_f32x4_lt);
 
 // f32x4.le -> v128.le<f32>
 function builtin_f32x4_le(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.v128;
@@ -9591,6 +10613,8 @@ builtins.set(BuiltinNames.f32x4_le, builtin_f32x4_le);
 
 // f32x4.gt -> v128.gt<f32>
 function builtin_f32x4_gt(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.v128;
@@ -9600,6 +10624,8 @@ builtins.set(BuiltinNames.f32x4_gt, builtin_f32x4_gt);
 
 // f32x4.ge -> v128.ge<f32>
 function builtin_f32x4_ge(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.v128;
@@ -9609,6 +10635,8 @@ builtins.set(BuiltinNames.f32x4_ge, builtin_f32x4_ge);
 
 // f32x4.convert_i32x4_s -> v128.convert<i32>
 function builtin_f32x4_convert_i32x4_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -9618,6 +10646,8 @@ builtins.set(BuiltinNames.f32x4_convert_i32x4_s, builtin_f32x4_convert_i32x4_s);
 
 // f32x4.convert_i32x4_u -> v128.convert<u32>
 function builtin_f32x4_convert_i32x4_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.v128;
@@ -9627,6 +10657,8 @@ builtins.set(BuiltinNames.f32x4_convert_i32x4_u, builtin_f32x4_convert_i32x4_u);
 
 // f32x4.demote_f64x2_zero -> v128.demote_zero<f64>
 function builtin_f32x4_demote_f64x2_zero(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.v128;
@@ -9636,6 +10668,8 @@ builtins.set(BuiltinNames.f32x4_demote_f64x2_zero, builtin_f32x4_demote_f64x2_ze
 
 // f64x2.splat -> v128.splat<f64>
 function builtin_f64x2_splat(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.v128;
@@ -9645,6 +10679,8 @@ builtins.set(BuiltinNames.f64x2_splat, builtin_f64x2_splat);
 
 // f64x2.extract_lane -> <f64>v128.extract_lane<f64>
 function builtin_f64x2_extract_lane(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.f64;
@@ -9654,6 +10690,8 @@ builtins.set(BuiltinNames.f64x2_extract_lane, builtin_f64x2_extract_lane);
 
 // f64x2.replace_lane -> v128.replace_lane
 function builtin_f64x2_replace_lane(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.v128;
@@ -9663,6 +10701,8 @@ builtins.set(BuiltinNames.f64x2_replace_lane, builtin_f64x2_replace_lane);
 
 // f64x2.add -> v128.add<f64>
 function builtin_f64x2_add(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.v128;
@@ -9672,6 +10712,8 @@ builtins.set(BuiltinNames.f64x2_add, builtin_f64x2_add);
 
 // f64x2.sub -> v128.sub<f64>
 function builtin_f64x2_sub(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.v128;
@@ -9681,6 +10723,8 @@ builtins.set(BuiltinNames.f64x2_sub, builtin_f64x2_sub);
 
 // f64x2.mul -> v128.mul<f64>
 function builtin_f64x2_mul(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.v128;
@@ -9690,6 +10734,8 @@ builtins.set(BuiltinNames.f64x2_mul, builtin_f64x2_mul);
 
 // f64x2.div -> v128.div<f64>
 function builtin_f64x2_div(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.v128;
@@ -9699,6 +10745,8 @@ builtins.set(BuiltinNames.f64x2_div, builtin_f64x2_div);
 
 // f64x2.neg -> v128.neg<f64>
 function builtin_f64x2_neg(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.v128;
@@ -9708,6 +10756,8 @@ builtins.set(BuiltinNames.f64x2_neg, builtin_f64x2_neg);
 
 // f64x2.min -> v128.min<f64>
 function builtin_f64x2_min(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.v128;
@@ -9717,6 +10767,8 @@ builtins.set(BuiltinNames.f64x2_min, builtin_f64x2_min);
 
 // f64x2.max -> v128.max<f64>
 function builtin_f64x2_max(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.v128;
@@ -9726,6 +10778,8 @@ builtins.set(BuiltinNames.f64x2_max, builtin_f64x2_max);
 
 // f64x2.pmin -> v128.pmin<f64>
 function builtin_f64x2_pmin(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.v128;
@@ -9735,6 +10789,8 @@ builtins.set(BuiltinNames.f64x2_pmin, builtin_f64x2_pmin);
 
 // f64x2.pmax -> v128.pmax<f64>
 function builtin_f64x2_pmax(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.v128;
@@ -9744,6 +10800,8 @@ builtins.set(BuiltinNames.f64x2_pmax, builtin_f64x2_pmax);
 
 // f64x2.abs -> v128.abs<f64>
 function builtin_f64x2_abs(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.v128;
@@ -9753,6 +10811,8 @@ builtins.set(BuiltinNames.f64x2_abs, builtin_f64x2_abs);
 
 // f64x2.sqrt -> v128.sqrt<f64>
 function builtin_f64x2_sqrt(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.v128;
@@ -9762,6 +10822,8 @@ builtins.set(BuiltinNames.f64x2_sqrt, builtin_f64x2_sqrt);
 
 // f64x2.ceil -> v128.ceil<f64>
 function builtin_f64x2_ceil(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.v128;
@@ -9771,6 +10833,8 @@ builtins.set(BuiltinNames.f64x2_ceil, builtin_f64x2_ceil);
 
 // f64x2.floor -> v128.floor<f64>
 function builtin_f64x2_floor(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.v128;
@@ -9780,6 +10844,8 @@ builtins.set(BuiltinNames.f64x2_floor, builtin_f64x2_floor);
 
 // f64x2.trunc -> v128.trunc<f64>
 function builtin_f64x2_trunc(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.v128;
@@ -9789,6 +10855,8 @@ builtins.set(BuiltinNames.f64x2_trunc, builtin_f64x2_trunc);
 
 // f64x2.nearest -> v128.nearest<f64>
 function builtin_f64x2_nearest(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.v128;
@@ -9798,6 +10866,8 @@ builtins.set(BuiltinNames.f64x2_nearest, builtin_f64x2_nearest);
 
 // f64x2.eq -> v128.eq<f64>
 function builtin_f64x2_eq(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.v128;
@@ -9807,6 +10877,8 @@ builtins.set(BuiltinNames.f64x2_eq, builtin_f64x2_eq);
 
 // f64x2.ne -> v128.ne<f64>
 function builtin_f64x2_ne(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.v128;
@@ -9816,6 +10888,8 @@ builtins.set(BuiltinNames.f64x2_ne, builtin_f64x2_ne);
 
 // f64x2.lt -> v128.lt<f64>
 function builtin_f64x2_lt(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.v128;
@@ -9825,6 +10899,8 @@ builtins.set(BuiltinNames.f64x2_lt, builtin_f64x2_lt);
 
 // f64x2.le -> v128.le<f64>
 function builtin_f64x2_le(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.v128;
@@ -9834,6 +10910,8 @@ builtins.set(BuiltinNames.f64x2_le, builtin_f64x2_le);
 
 // f64x2.gt -> v128.gt<f64>
 function builtin_f64x2_gt(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.v128;
@@ -9843,6 +10921,8 @@ builtins.set(BuiltinNames.f64x2_gt, builtin_f64x2_gt);
 
 // f64x2.ge -> v128.ge<f64>
 function builtin_f64x2_ge(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f64 ];
   ctx.contextualType = Type.v128;
@@ -9852,6 +10932,8 @@ builtins.set(BuiltinNames.f64x2_ge, builtin_f64x2_ge);
 
 // f64x2.convert_low_i32x4_s -> v128.convert_low<i32>
 function builtin_f64x2_convert_low_i32x4_s(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.i32 ];
   ctx.contextualType = Type.v128;
@@ -9861,6 +10943,8 @@ builtins.set(BuiltinNames.f64x2_convert_low_i32x4_s, builtin_f64x2_convert_low_i
 
 // f64x2.convert_low_i32x4_u -> v128.convert_low<u32>
 function builtin_f64x2_convert_low_i32x4_u(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.u32 ];
   ctx.contextualType = Type.v128;
@@ -9870,6 +10954,8 @@ builtins.set(BuiltinNames.f64x2_convert_low_i32x4_u, builtin_f64x2_convert_low_i
 
 // f64x2.promote_low_f32x4 -> v128.promote_low<f32>
 function builtin_f64x4_promote_low_f32x4(ctx: BuiltinContext): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   checkTypeAbsent(ctx);
   ctx.typeArguments = [ Type.f32 ];
   ctx.contextualType = Type.v128;
@@ -9881,6 +10967,8 @@ builtins.set(BuiltinNames.f64x2_promote_low_f32x4, builtin_f64x4_promote_low_f32
 
 /** Compiles the `visit_globals` function. */
 export function compileVisitGlobals(compiler: Compiler): void {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var module = compiler.module;
   var exprs = new Array<ExpressionRef>();
   var sizeTypeRef = compiler.options.sizeTypeRef;
@@ -9941,6 +11029,8 @@ export function compileVisitGlobals(compiler: Compiler): void {
 
 /** Ensures that the visitor function of the specified class is compiled. */
 function ensureVisitMembersOf(compiler: Compiler, instance: Class): void {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   assert(instance.type.isManaged);
   if (instance.visitRef) return;
 
@@ -10051,6 +11141,8 @@ function ensureVisitMembersOf(compiler: Compiler, instance: Class): void {
 
 /** Compiles the `__visit_members` function. */
 export function compileVisitMembers(compiler: Compiler): void {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var program = compiler.program;
   var module = compiler.module;
   var usizeType = program.options.usizeType;
@@ -10129,6 +11221,8 @@ export function compileVisitMembers(compiler: Compiler): void {
 }
 
 function typeToRuntimeFlags(type: Type): TypeinfoFlags {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var flags = TypeinfoFlags.VALUE_ALIGN_0 * (1 << type.alignLog2);
   if (type.is(TypeFlags.SIGNED)) flags |= TypeinfoFlags.VALUE_SIGNED;
   if (type.is(TypeFlags.FLOAT)) flags |= TypeinfoFlags.VALUE_FLOAT;
@@ -10139,6 +11233,8 @@ function typeToRuntimeFlags(type: Type): TypeinfoFlags {
 
 /** Compiles runtime type information for use by stdlib. */
 export function compileRTTI(compiler: Compiler): void {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var program = compiler.program;
   var module = compiler.module;
   var managedClasses = program.managedClasses;
@@ -10203,6 +11299,8 @@ export function compileRTTI(compiler: Compiler): void {
 
 /** Compiles a class-specific instanceof helper, checking a ref against all concrete instances. */
 export function compileClassInstanceOf(compiler: Compiler, prototype: ClassPrototype): void {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var module = compiler.module;
   var sizeTypeRef = compiler.options.sizeTypeRef;
   var instanceofInstance = assert(prototype.program.instanceofInstance);
@@ -10261,6 +11359,8 @@ var checkConstantType_expr: ExpressionRef = 0;
 
 /** Checks the constant type of a type argument *or* expression. */
 function checkConstantType(ctx: BuiltinContext): Type | null {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var operands = ctx.operands;
   var typeArguments = ctx.typeArguments;
@@ -10305,6 +11405,8 @@ function checkConstantType(ctx: BuiltinContext): Type | null {
 
 /** Reifies a constant type check potentially involving an expression. */
 function reifyConstantType(ctx: BuiltinContext, expr: ExpressionRef): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var module = ctx.compiler.module;
   if (checkConstantType_expr && mustPreserveSideEffects(checkConstantType_expr, module.ref)) {
     expr = module.block(null, [
@@ -10317,6 +11419,8 @@ function reifyConstantType(ctx: BuiltinContext, expr: ExpressionRef): Expression
 
 /** Evaluates a compile-time constant immediate offset argument.*/
 function evaluateImmediateOffset(expression: Expression, compiler: Compiler): i32 {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var module = compiler.module;
   var value: i32;
   if (compiler.options.isWasm64) {
@@ -10350,6 +11454,8 @@ function evaluateImmediateOffset(expression: Expression, compiler: Compiler): i3
 
 /** Evaluates a compile-time constant immediate align argument. */
 function evaluateImmediateAlign(expression: Expression, naturalAlign: i32, compiler: Compiler): i32 {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var align = evaluateImmediateOffset(expression, compiler);
   if (align < 0) return align;
   if (align < 1 || naturalAlign > 16) {
@@ -10371,6 +11477,8 @@ function evaluateImmediateAlign(expression: Expression, naturalAlign: i32, compi
 
 /** Checks that the specified feature is enabled. */
 function checkFeatureEnabled(ctx: BuiltinContext, feature: Feature): i32 {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   if (!compiler.options.hasFeature(feature)) {
     compiler.error(
@@ -10384,6 +11492,8 @@ function checkFeatureEnabled(ctx: BuiltinContext, feature: Feature): i32 {
 
 /** Checks a call with a single required type argument. Returns `1` on error. */
 function checkTypeRequired(ctx: BuiltinContext, setCurrentTypeOnError: bool = false): i32 {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var compiler = ctx.compiler;
   var typeArguments = ctx.typeArguments;
   if (typeArguments) {
@@ -10406,6 +11516,8 @@ function checkTypeRequired(ctx: BuiltinContext, setCurrentTypeOnError: bool = fa
 
 /** Checks a call with a single optional type argument. Returns `1` on error. */
 function checkTypeOptional(ctx: BuiltinContext, setCurrentTypeOnError: bool = false): i32 {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var typeArguments = ctx.typeArguments;
   if (typeArguments) {
     let compiler = ctx.compiler;
@@ -10424,6 +11536,8 @@ function checkTypeOptional(ctx: BuiltinContext, setCurrentTypeOnError: bool = fa
 
 /** Checks a call that is not generic. Returns `1` on error. */
 function checkTypeAbsent(ctx: BuiltinContext): i32 {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var typeArguments = ctx.typeArguments;
   if (typeArguments) {
     let prototype = ctx.prototype;
@@ -10438,6 +11552,8 @@ function checkTypeAbsent(ctx: BuiltinContext): i32 {
 
 /** Checks a call that requires a fixed number of arguments. Returns `1` on error. */
 function checkArgsRequired(ctx: BuiltinContext, expected: i32): i32 {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var operands = ctx.operands;
   if (operands.length != expected) {
     ctx.compiler.error(
@@ -10451,6 +11567,8 @@ function checkArgsRequired(ctx: BuiltinContext, expected: i32): i32 {
 
 /** Checks a call that requires a variable number of arguments. Returns `1` on error. */
 function checkArgsOptional(ctx: BuiltinContext, expectedMinimum: i32, expectedMaximum: i32): i32 {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var operands = ctx.operands;
   var numOperands = operands.length;
   if (numOperands < expectedMinimum) {
@@ -10471,6 +11589,8 @@ function checkArgsOptional(ctx: BuiltinContext, expectedMinimum: i32, expectedMa
 
 /** Makes an usize constant matching contextual type if reasonable. */
 function contextualUsize(compiler: Compiler, value: i64, contextualType: Type): ExpressionRef {
+  // @ts-ignore
+  console.log(new Error().stack.split('\n')[1].trim());
   var module = compiler.module;
   // Check if contextual type fits
   if (contextualType != Type.auto && contextualType.isIntegerValue) {
