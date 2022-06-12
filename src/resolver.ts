@@ -2604,8 +2604,8 @@ export class Resolver extends DiagnosticEmitter {
       // inherit class specific type arguments
       let classTypeArguments = classInstance.typeArguments;
       if (classTypeArguments) {
+        let numClassTypeArguments = classTypeArguments.length;
         let classTypeParameters = assert(classInstance.prototype.typeParameterNodes);
-        let numClassTypeArguments = classTypeParameters.length;
         assert(numClassTypeArguments == classTypeParameters.length);
         for (let i = 0; i < numClassTypeArguments; ++i) {
           let classTypeParameterName = classTypeParameters[i].name.text;
@@ -2627,7 +2627,7 @@ export class Resolver extends DiagnosticEmitter {
       assert(typeParameterNodes && numFunctionTypeArguments == typeParameterNodes.length);
       for (let i = 0; i < numFunctionTypeArguments; ++i) {
         ctxTypes.set(
-          (<TypeParameterNode[]>typeParameterNodes)[i].name.text,
+          typeParameterNodes![i].name.text,
           typeArguments[i]
         );
       }
